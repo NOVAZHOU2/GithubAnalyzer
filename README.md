@@ -13,7 +13,7 @@
 
 ### 前置要求
 - Python 3.8+
-- GitHub账号（需准备[Personal Access Token](https://github.com/settings/tokens) , 默认使用我的 Token）
+- GitHub账号（需准备[Personal Access Token](https://github.com/settings/tokens) , 请在.env中输入自己的 Token,否则会触发401错误）
 
 ### 安装依赖
 
