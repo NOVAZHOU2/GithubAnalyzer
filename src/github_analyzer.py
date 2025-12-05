@@ -135,17 +135,44 @@ class GitHubAPI:
         logger.info(f"✅ 共找到 {len(projects)} 个项目")
         return projects
 
+    def get_project_total_commits(self, owner: str, repo: str) -> int:
+        """获取项目的总commit数"""
+        try:
+            url = f"https://api.github.com/repos/{owner}/{repo}"
+            response = requests.get(url, headers=self.headers, timeout=self.timeout)
+
+            if response.status_code == 200:
+                data = response.json()
+                return data.get("size", 0)  # 仓库大小可以作为参考
+        except Exception as e:
+            logger.warning(f"获取项目{owner}/{repo}信息失败: {e}")
+
+        return 0  # 如果无法获取，返回0
+
     def get_commits(self, owner: str, repo: str, max_commits: int = 20) -> List[Dict]:
         """获取项目的commits - 类似图片中的格式"""
         commits = []
         page = 1
+        total_commits_obtained = 0
+        max_attempts = 10  # 最大尝试页数，防止无限循环
 
-        logger.info(f"📄 获取 {owner}/{repo} 的提交记录...")
+        logger.info(f"📄 获取 {owner}/{repo} 的提交记录，期望获取 {max_commits} 条...")
 
-        while len(commits) < max_commits:
+        # 先获取项目的总commit数（估算）
+        total_commits_estimate = self.get_project_total_commits(owner, repo)
+        if total_commits_estimate > 0:
+            logger.info(f"📊 项目 {owner}/{repo} 预计有 {total_commits_estimate} 条commit")
+            # 如果总commit数小于请求数，则调整max_commits
+            if total_commits_estimate < max_commits:
+                max_commits = total_commits_estimate
+                logger.info(f"🔧 调整获取数量为: {max_commits} 条")
+
+        attempts = 0
+        while len(commits) < max_commits and attempts < max_attempts:
+            per_page = min(100, max_commits - len(commits))
             url = f"https://api.github.com/repos/{owner}/{repo}/commits"
             params = {
-                "per_page": min(100, max_commits - len(commits)),
+                "per_page": per_page,
                 "page": page
             }
 
@@ -162,6 +189,12 @@ class GitHubAPI:
                 if response.status_code == 200:
                     commit_data = response.json()
 
+                    # 如果没有数据了，说明已经获取了所有commit
+                    if not commit_data:
+                        logger.info(f"📭 已获取所有可用commit，共 {len(commits)} 条")
+                        break
+
+                    current_batch_count = 0
                     for commit_item in commit_data:
                         if len(commits) >= max_commits:
                             break
@@ -170,21 +203,33 @@ class GitHubAPI:
                         commit_info = {
                             "sha_short": commit_item["sha"][:7],
                             "message": commit_item["commit"]["message"],
+                            "title": self._extract_commit_title(commit_item["commit"]["message"]),
                             "author_name": commit_item["commit"]["author"]["name"],
                             "author_date": commit_item["commit"]["author"]["date"],
                             "html_url": commit_item["html_url"]
                         }
                         commits.append(commit_info)
+                        current_batch_count += 1
 
-                        # 显示进度
-                        if len(commits) % 10 == 0:
-                            logger.info(f"  已获取 {len(commits)} 条提交记录")
+                    total_commits_obtained += current_batch_count
+
+                    # 显示进度
+                    if len(commits) % 10 == 0 or current_batch_count < per_page:
+                        logger.info(f"  已获取 {len(commits)} 条提交记录")
+
+                    # 如果这一批数据量小于请求的per_page，说明没有更多数据了
+                    if current_batch_count < per_page:
+                        logger.info(f"📭 已获取所有可用commit，共 {len(commits)} 条")
+                        break
 
                 elif response.status_code == 404:
                     logger.warning(f"仓库不存在或无法访问: {owner}/{repo}")
                     break
                 elif response.status_code == 409:  # 空仓库
                     logger.warning(f"仓库 {owner}/{repo} 为空")
+                    break
+                elif response.status_code == 422:  # 分页超出范围
+                    logger.info(f"📭 已获取所有commit，共 {len(commits)} 条")
                     break
                 else:
                     logger.error(f"获取提交失败: {response.status_code}")
@@ -195,10 +240,22 @@ class GitHubAPI:
                 break
 
             page += 1
+            attempts += 1
             time.sleep(0.5)  # 避免过快请求
 
-        logger.info(f"✅ 获取到 {len(commits)} 条提交记录")
+        # 最终检查：如果实际获取的commit数小于请求数，给出提示
+        if len(commits) < max_commits:
+            logger.info(f"📊 实际获取 {len(commits)} 条commit（小于请求的 {max_commits} 条）")
+
+        logger.info(f"✅ 最终获取到 {len(commits)} 条提交记录")
         return commits
+
+    def _extract_commit_title(self, message: str) -> str:
+        """提取commit标题（第一行）"""
+        lines = message.split('\n')
+        if lines:
+            return lines[0].strip()
+        return message
 
     def get_commit_details(self, owner: str, repo: str, sha: str) -> Optional[Dict]:
         """获取单个commit的详细信息"""
@@ -222,17 +279,29 @@ class GitHubAPI:
 class CommitAnalyzer:
     """Commit分析器"""
 
-    def __init__(self, config: ProjectConfig):
+    def __init__(self, config: ProjectConfig, output_dir: str = "output"):
+        """初始化分析器，指定输出目录"""
         self.config = config
         self.github = GitHubAPI()
         self.projects = []
         self.project_commits = {}  # 项目名 -> commits列表
+        self.output_dir = output_dir
+
+        # 确保输出目录存在
+        os.makedirs(self.output_dir, exist_ok=True)
+        logger.info(f"📁 输出目录设置为: {os.path.abspath(self.output_dir)}")
+
+    def _get_output_path(self, filename: str) -> str:
+        """获取输出文件的完整路径"""
+        return os.path.join(self.output_dir, filename)
 
     def run(self):
         """运行分析"""
         print("=" * 60)
         print("GitHub C项目提交分析工具")
         print("=" * 60)
+        print(f"输出目录: {os.path.abspath(self.output_dir)}")
+        print()
 
         # 1. 搜索项目
         self.projects = self.github.search_c_projects(
@@ -244,13 +313,17 @@ class CommitAnalyzer:
             logger.error("未找到符合条件的项目")
             return
 
-        # 保存项目信息
+        # 保存项目信息到output目录
         self.save_projects_csv()
 
         # 2. 获取每个项目的commits
+        total_expected_commits = 0
+        total_actual_commits = 0
+
         for i, project in enumerate(self.projects, 1):
             print(f"\n[{i}/{len(self.projects)}] 分析项目: {project['full_name']}")
 
+            # 获取commits
             commits = self.github.get_commits(
                 owner=project["owner"],
                 repo=project["name"],
@@ -263,18 +336,38 @@ class CommitAnalyzer:
                     "commits": commits
                 }
 
-                # 保存每个项目的数据
+                # 统计commit数量
+                expected = self.config.commits_per_project
+                actual = len(commits)
+                total_expected_commits += expected
+                total_actual_commits += actual
+
+                # 显示获取情况
+                if actual < expected:
+                    print(f"   📊 获取情况: {actual}/{expected} 条commit")
+                else:
+                    print(f"   ✅ 成功获取: {actual} 条commit")
+
+                # 保存每个项目的数据到output目录
                 self.save_project_commits_csv(project, commits)
 
-        # 3. 保存合并的表格
+        # 3. 保存合并的表格到output目录
         if self.project_commits:
+            # 保存为类似图片的格式
+            self.save_picture_format_csv()
+            # 保存为合并表格
             self.save_combined_table()
+            # 保存为Markdown格式
+            self.save_markdown_table()
 
-        self.print_summary()
+        # 显示最终统计
+        self.print_summary(total_expected_commits, total_actual_commits)
 
     def save_projects_csv(self, filename: str = "projects.csv"):
-        """保存项目信息到CSV"""
-        with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
+        """保存项目信息到CSV（在output目录下）"""
+        filepath = self._get_output_path(filename)
+
+        with open(filepath, 'w', newline='', encoding='utf-8-sig') as f:
             writer = csv.writer(f)
             writer.writerow(["序号", "项目名称", "项目URL", "Star数", "描述", "创建时间", "更新时间"])
 
@@ -289,15 +382,17 @@ class CommitAnalyzer:
                     project["updated_at"]
                 ])
 
-        logger.info(f"✅ 项目列表已保存到 {filename}")
+        logger.info(f"✅ 项目列表已保存到 {filepath}")
 
     def save_project_commits_csv(self, project: Dict, commits: List[Dict], filename: str = None):
-        """保存单个项目的commits到CSV"""
+        """保存单个项目的commits到CSV（在output目录下）"""
         if not filename:
-            safe_name = project["full_name"].replace("/", "_")
+            safe_name = project["full_name"].replace("/", "_").replace("\\", "_")
             filename = f"{safe_name}_commits.csv"
 
-        with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
+        filepath = self._get_output_path(filename)
+
+        with open(filepath, 'w', newline='', encoding='utf-8-sig') as f:
             writer = csv.writer(f)
             writer.writerow(["项目名称", "项目URL", "提交ID", "提交者", "提交时间", "提交信息", "提交链接"])
 
@@ -312,11 +407,52 @@ class CommitAnalyzer:
                     commit["html_url"]
                 ])
 
-        logger.info(f"📁 提交记录已保存到 {filename}")
+        logger.info(f"📁 提交记录已保存到 {filepath}")
+        return filepath
+
+    def save_picture_format_csv(self, filename: str = "commits_picture_format.csv"):
+        """保存为图片中的格式（在output目录下）"""
+        filepath = self._get_output_path(filename)
+
+        with open(filepath, 'w', newline='', encoding='utf-8-sig') as f:
+            writer = csv.writer(f)
+            # 图片中的表格格式
+            writer.writerow(["Commit标题", "作者和时间", "Commit链接"])
+
+            all_commits = []
+            for project_full_name, data in self.project_commits.items():
+                project = data["project"]
+                commits = data["commits"]
+
+                for commit in commits:
+                    # 格式化时间（类似图片中的"2 hours ago"格式）
+                    time_str = self.format_relative_time(commit["author_date"])
+                    author_time = f"{commit['author_name']} committed {time_str}"
+
+                    all_commits.append({
+                        "title": commit["title"],
+                        "author_time": author_time,
+                        "url": commit["html_url"]
+                    })
+
+            # 按照时间倒序排序（最新的在前面）
+            all_commits.sort(key=lambda x: x["author_time"], reverse=True)
+
+            for commit in all_commits:
+                writer.writerow([
+                    commit["title"],
+                    commit["author_time"],
+                    commit["url"]
+                ])
+
+        logger.info(f"🖼️ 图片格式表格已保存到 {filepath}")
+        return filepath
 
     def save_combined_table(self, filename: str = "all_commits.csv"):
-        """保存合并表格 - 按照图片格式"""
-        with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
+        """保存合并表格（在output目录下）"""
+        filepath = self._get_output_path(filename)
+
+        with open(filepath, 'w', newline='', encoding='utf-8-sig') as f:
             writer = csv.writer(f)
             writer.writerow(["项目名称+URL", "提交时间", "Commit标题", "Commit URL"])
 
@@ -328,55 +464,52 @@ class CommitAnalyzer:
                     # 格式化时间（类似图片中的"2 hours ago"格式）
                     time_str = self.format_relative_time(commit["author_date"])
 
-                    # 获取commit标题（第一行）
-                    message_lines = commit["message"].split('\n')
-                    commit_title = message_lines[0] if message_lines else ""
-
                     writer.writerow([
                         f"{project['full_name']} ({project['html_url']})",
                         f"{commit['author_name']} committed {time_str}",
-                        commit_title,
+                        commit["title"],
                         commit["html_url"]
                     ])
 
-        logger.info(f"✅ 合并表格已保存到 {filename}")
-
-        # 同时保存为Markdown格式，更易读
-        self.save_markdown_table("all_commits.md")
+        logger.info(f"✅ 合并表格已保存到 {filepath}")
+        return filepath
 
     def save_markdown_table(self, filename: str = "all_commits.md"):
-        """保存为Markdown表格格式"""
-        with open(filename, 'w', encoding='utf-8-sig') as f:
+        """保存为Markdown表格格式（在output目录下）"""
+        filepath = self._get_output_path(filename)
+
+        with open(filepath, 'w', encoding='utf-8-sig') as f:
             f.write("# GitHub C项目提交记录\n\n")
             f.write("> 生成时间: " + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n\n")
+            f.write("> 输出目录: " + os.path.abspath(self.output_dir) + "\n\n")
 
             for project_full_name, data in self.project_commits.items():
                 project = data["project"]
                 commits = data["commits"]
 
                 f.write(f"## {project['full_name']}\n")
-                f.write(f"- **URL**: {project['html_url']}\n")
+                f.write(f"- **项目URL**: {project['html_url']}\n")
                 f.write(f"- **Star数**: {project['stars']}\n")
                 f.write(f"- **提交记录数**: {len(commits)}\n\n")
 
-                f.write("| 提交时间 | 提交者 | Commit标题 | 链接 |\n")
-                f.write("|----------|--------|------------|------|\n")
+                f.write("| Commit标题 | 提交者 | 提交时间 | 链接 |\n")
+                f.write("|------------|--------|----------|------|\n")
 
                 for commit in commits:
                     time_str = self.format_relative_time(commit["author_date"])
-                    message_lines = commit["message"].split('\n')
-                    commit_title = message_lines[0] if message_lines else ""
+                    commit_title = commit["title"]
 
                     # 缩短过长的标题
-                    if len(commit_title) > 80:
-                        commit_title = commit_title[:77] + "..."
+                    if len(commit_title) > 100:
+                        commit_title = commit_title[:97] + "..."
 
                     f.write(
-                        f"| {time_str} | {commit['author_name']} | {commit_title} | [查看]({commit['html_url']}) |\n")
+                        f"| {commit_title} | {commit['author_name']} | {time_str} | [查看]({commit['html_url']}) |\n")
 
                 f.write("\n---\n\n")
 
-        logger.info(f"📄 Markdown格式已保存到 {filename}")
+        logger.info(f"📄 Markdown格式已保存到 {filepath}")
+        return filepath
 
     def format_relative_time(self, iso_time: str) -> str:
         """格式化时间为相对时间（如'2 hours ago'）"""
@@ -417,7 +550,7 @@ class CommitAnalyzer:
         except:
             return iso_time
 
-    def print_summary(self):
+    def print_summary(self, total_expected: int, total_actual: int):
         """打印摘要信息"""
         print("\n" + "=" * 60)
         print("分析摘要")
@@ -425,37 +558,46 @@ class CommitAnalyzer:
         print(f"📊 分析完成！")
         print(f"   项目数量: {len(self.projects)}")
 
-        total_commits = sum(len(data["commits"]) for data in self.project_commits.values())
-        print(f"   提交记录总数: {total_commits}")
+        print(f"   📈 Commit获取统计:")
+        print(f"     期望获取: {total_expected} 条")
+        print(f"     实际获取: {total_actual} 条")
 
+        if total_actual < total_expected:
+            print(f"     ⚠️  实际获取少于期望值")
+        else:
+            print(f"     ✅ 成功获取所有期望的commit")
+
+        print(f"\n📁 输出目录: {os.path.abspath(self.output_dir)}")
         print(f"\n📁 生成的文件:")
-        print(f"   - projects.csv (项目列表)")
-        print(f"   - all_commits.csv (合并表格)")
-        print(f"   - all_commits.md (Markdown格式)")
 
-        for project_full_name, data in self.project_commits.items():
-            safe_name = project_full_name.replace("/", "_")
-            print(f"   - {safe_name}_commits.csv")
+        # 列出output目录下的文件
+        for filename in os.listdir(self.output_dir):
+            if filename.endswith(('.csv', '.md')):
+                filepath = os.path.join(self.output_dir, filename)
+                size = os.path.getsize(filepath)
+                print(f"   - {filename} ({size} bytes)")
 
         print(f"\n📈 项目详情:")
         for i, project in enumerate(self.projects[:5], 1):
             commits = self.project_commits.get(project["full_name"], {}).get("commits", [])
-            print(f"{i:2d}. {project['full_name']:<40} ⭐ {project['stars']:<6} 📝 {len(commits)} commits")
+            expected = self.config.commits_per_project
+            actual = len(commits)
+            status = "✅" if actual >= expected else "⚠️"
+            print(f"{i:2d}. {project['full_name']:<30} ⭐ {project['stars']:<6} {status} {actual}/{expected} commits")
 
         if self.project_commits:
-            print(f"\n📋 最近提交示例:")
-            for project_full_name, data in list(self.project_commits.items())[:2]:
-                project = data["project"]
+            print(f"\n📋 最近提交示例（图片格式）:")
+            for project_full_name, data in list(self.project_commits.items())[:1]:
                 commits = data["commits"][:2] if len(data["commits"]) >= 2 else data["commits"]
 
-                print(f"\n项目: {project['full_name']}")
-                print("-" * 80)
                 for commit in commits:
                     time_str = self.format_relative_time(commit["author_date"])
-                    message_lines = commit["message"].split('\n')
-                    title = message_lines[0] if message_lines else ""
+                    author_time = f"{commit['author_name']} committed {time_str}"
+                    title = commit["title"]
 
                     if len(title) > 80:
                         title = title[:77] + "..."
 
-                    print(f"  [{time_str}] {commit['author_name']}: {title}")
+                    print(f"\n{title}")
+                    print(f"{author_time}")
+                    print(f"{commit['html_url']}")

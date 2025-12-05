@@ -9,9 +9,9 @@ def main():
 
     parser.add_argument("--stars", type=int, default=1000,
                         help="项目最小star数 (默认: 1000)")
-    parser.add_argument("--projects", type=int, default=5,
+    parser.add_argument("--projects", type=int, default=100,
                         help="最大项目数 (默认: 5)")
-    parser.add_argument("--commits", type=int, default=20,
+    parser.add_argument("--commits", type=int, default=200,
                         help="每个项目的commit数 (默认: 20)")
     parser.add_argument("--output", type=str, default="results",
                         help="输出目录 (默认: results)")
