@@ -556,7 +556,7 @@ class CommitAnalyzer:
         print("分析摘要")
         print("=" * 60)
         print(f"📊 分析完成！")
-        print(f"   项目数量: {len(self.projects)}")
+        print(f"  项目数量: {len(self.projects)}")
 
         print(f"   📈 Commit获取统计:")
         print(f"     期望获取: {total_expected} 条")
