@@ -1,0 +1,31 @@
+# config.yaml
+# GitHub C项目提交分析配置
+
+# 项目筛选条件
+filter:
+  min_stars: 1000       # 最小star数
+  max_projects: 5       # 最大项目数
+  language: "C"         # 编程语言
+  sort_by: "stars"      # 排序方式：stars, forks, updated
+  order: "desc"         # 排序顺序：desc, asc
+
+# Commit设置
+commits:
+  per_project: 50       # 每个项目的commit数
+  include_merge: true   # 是否包含merge提交
+  time_format: "relative"  # 时间格式：relative(相对时间), absolute(绝对时间)
+
+# 输出设置
+output:
+  directory: "results"  # 输出目录
+  format: ["csv", "excel"]  # 输出格式
+  separate_files: true  # 是否每个项目单独文件
+  combined_table: true  # 是否生成合并表格
+  include_project_url: true  # 是否包含项目URL
+
+# 表格列设置
+columns:
+  - "项目名称+URL"      # 项目名和URL
+  - "Commit标题"        # commit标题
+  - "提交时间"          # 提交时间
+  - "Commit URL"        # commit链接
