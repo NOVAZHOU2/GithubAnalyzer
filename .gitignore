@@ -38,9 +38,6 @@ myenv/
 
 # Output files
 output/
-results/
-*.csv
-*.md
 *.log
 
 # Environment variables
