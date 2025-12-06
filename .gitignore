@@ -37,7 +37,6 @@ myenv/
 .venv
 
 # Output files
-output/
 *.log
 
 # Environment variables
