@@ -1,0 +1,101 @@
+﻿序号,项目名称,项目URL,Star数,描述,创建时间,更新时间
+1,torvalds/linux,https://github.com/torvalds/linux,209480,Linux kernel source tree,2011-09-04T22:48:12Z,2025-12-05T15:24:03Z
+2,Genymobile/scrcpy,https://github.com/Genymobile/scrcpy,132038,Display and control your Android device,2017-11-21T18:00:27Z,2025-12-05T14:46:02Z
+3,netdata/netdata,https://github.com/netdata/netdata,76918,"The fastest path to AI-powered full stack observability, even for lean teams.",2013-06-17T18:39:10Z,2025-12-05T15:12:36Z
+4,ventoy/Ventoy,https://github.com/ventoy/Ventoy,72765,A new bootable USB solution.,2020-03-10T15:19:19Z,2025-12-05T14:43:20Z
+5,redis/redis,https://github.com/redis/redis,72010,"For developers, who are building real-time data-driven applications, Redis is the preferred, fastest, and most feature-rich cache, data structure server, and document and vector query engine.",2009-03-21T22:32:25Z,2025-12-05T14:11:13Z
+6,obsproject/obs-studio,https://github.com/obsproject/obs-studio,68498,OBS Studio - Free and open source software for live streaming and screen recording,2013-10-01T02:40:31Z,2025-12-05T14:21:33Z
+7,git/git,https://github.com/git/git,57868,Git Source Code Mirror - This is a publish-only repository but pull requests can be turned into patches to the mailing list via GitGitGadget (https://gitgitgadget.github.io/). Please follow Documentation/SubmittingPatches procedure for any of your improvements.,2008-07-23T14:21:26Z,2025-12-05T15:21:25Z
+8,FFmpeg/FFmpeg,https://github.com/FFmpeg/FFmpeg,55309,Mirror of https://git.ffmpeg.org/ffmpeg.git,2011-04-14T14:12:38Z,2025-12-05T14:54:11Z
+9,curl/curl,https://github.com/curl/curl,40070,"A command line tool and library for transferring data with URL syntax, supporting DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET, TFTP, WS and WSS. libcurl offers a myriad of powerful features",2010-03-18T22:32:22Z,2025-12-05T15:22:32Z
+10,tmux/tmux,https://github.com/tmux/tmux,39964,tmux source code,2015-06-03T23:32:55Z,2025-12-05T14:42:24Z
+11,wg/wrk,https://github.com/wg/wrk,39857,Modern HTTP benchmarking tool,2012-03-20T11:12:28Z,2025-12-05T08:27:06Z
+12,php/php-src,https://github.com/php/php-src,39672,The PHP Interpreter,2011-06-16T01:52:25Z,2025-12-05T07:54:42Z
+13,pbatard/rufus,https://github.com/pbatard/rufus,33875,The Reliable USB Formatting Utility,2011-11-19T19:12:05Z,2025-12-05T10:00:03Z
+14,jqlang/jq,https://github.com/jqlang/jq,33140,Command-line JSON processor,2012-07-18T19:57:25Z,2025-12-05T11:38:58Z
+15,bilibili/ijkplayer,https://github.com/bilibili/ijkplayer,33063,"Android/iOS video player based on FFmpeg n3.4, with MediaCodec, VideoToolbox support.",2013-06-03T04:12:04Z,2025-12-05T13:54:49Z
+16,mpv-player/mpv,https://github.com/mpv-player/mpv,32867,🎥 Command line media player,2012-10-13T08:08:44Z,2025-12-05T14:28:19Z
+17,lizongying/my-tv,https://github.com/lizongying/my-tv,32202,我的电视 电视直播软件，安装即可使用,2023-12-04T12:18:39Z,2025-12-05T08:15:24Z
+18,coolsnowwolf/lede,https://github.com/coolsnowwolf/lede,31152,Lean's LEDE source,2017-09-06T07:39:03Z,2025-12-05T13:54:59Z
+19,nothings/stb,https://github.com/nothings/stb,30700,stb single-file public domain libraries for C/C++,2014-05-25T16:51:23Z,2025-12-05T12:07:51Z
+20,valinet/ExplorerPatcher,https://github.com/valinet/ExplorerPatcher,30530,This project aims to enhance the working environment on Windows,2021-08-09T14:17:24Z,2025-12-05T14:53:18Z
+21,cfenollosa/os-tutorial,https://github.com/cfenollosa/os-tutorial,29865,How to create an OS from scratch,2014-09-29T08:39:34Z,2025-12-05T13:08:22Z
+22,raysan5/raylib,https://github.com/raysan5/raylib,29563,A simple and easy-to-use library to enjoy videogames programming,2013-10-24T15:46:04Z,2025-12-05T12:45:28Z
+23,openssl/openssl,https://github.com/openssl/openssl,29158,TLS/SSL and crypto library,2013-01-15T22:34:48Z,2025-12-05T15:15:31Z
+24,kingToolbox/WindTerm,https://github.com/kingToolbox/WindTerm,28964,A professional cross-platform SSH/Sftp/Shell/Telnet/Tmux/Serial terminal.,2019-10-09T19:56:09Z,2025-12-05T14:18:04Z
+25,nginx/nginx,https://github.com/nginx/nginx,28739,The official NGINX Open Source repository.,2015-06-23T10:26:27Z,2025-12-05T15:21:55Z
+26,koekeishiya/yabai,https://github.com/koekeishiya/yabai,27644,A tiling window manager for macOS based on binary space partitioning,2019-05-04T15:00:50Z,2025-12-05T14:27:25Z
+27,ValdikSS/GoodbyeDPI,https://github.com/ValdikSS/GoodbyeDPI,27475,GoodbyeDPI — Deep Packet Inspection circumvention utility (for Windows),2017-05-16T18:48:52Z,2025-12-05T14:36:30Z
+28,ggreer/the_silver_searcher,https://github.com/ggreer/the_silver_searcher,27139,"A code-searching tool similar to ack, but faster.",2011-11-19T19:50:47Z,2025-12-05T15:24:33Z
+29,pjreddie/darknet,https://github.com/pjreddie/darknet,26397,Convolutional Neural Networks,2014-04-11T07:59:16Z,2025-12-05T01:07:00Z
+30,libuv/libuv,https://github.com/libuv/libuv,26290,Cross-platform asynchronous I/O,2013-11-30T00:29:56Z,2025-12-05T14:24:50Z
+31,facebook/zstd,https://github.com/facebook/zstd,26155,Zstandard - Fast real-time compression algorithm,2015-01-24T00:22:38Z,2025-12-05T13:48:18Z
+32,robertdavidgraham/masscan,https://github.com/robertdavidgraham/masscan,25126,"TCP port scanner, spews SYN packets asynchronously, scanning entire Internet in under 5 minutes.",2013-07-28T05:35:33Z,2025-12-05T14:07:11Z
+33,hashcat/hashcat,https://github.com/hashcat/hashcat,24867,World's fastest and most advanced password recovery utility,2015-12-04T14:46:51Z,2025-12-05T13:35:53Z
+34,openwrt/openwrt,https://github.com/openwrt/openwrt,24694,This repository is a mirror of https://git.openwrt.org/openwrt/openwrt.git It is for reference only and is not active for check-ins.  We will continue to accept Pull Requests here. They will be merged via staging trees then into openwrt.git.,2015-11-09T07:13:55Z,2025-12-05T14:51:09Z
+35,taosdata/TDengine,https://github.com/taosdata/TDengine,24557,"High-performance, scalable time-series database designed for Industrial IoT (IIoT) scenarios",2019-07-11T08:33:48Z,2025-12-05T10:52:29Z
+36,arendst/Tasmota,https://github.com/arendst/Tasmota,23911,"Alternative firmware for ESP8266 and ESP32 based devices with easy configuration using webUI, OTA updates, automation using timers or rules, expandability and entirely local control over MQTT, HTTP, Serial or KNX. Full documentation at",2017-01-28T13:37:08Z,2025-12-04T15:20:22Z
+37,valkey-io/valkey,https://github.com/valkey-io/valkey,23839,A flexible distributed key-value database that is optimized for caching and other realtime workloads.,2024-03-22T00:42:17Z,2025-12-05T14:28:38Z
+38,mozilla-ai/llamafile,https://github.com/mozilla-ai/llamafile,23451,Distribute and run LLMs with a single file.,2023-09-10T21:12:32Z,2025-12-05T14:09:12Z
+39,radareorg/radare2,https://github.com/radareorg/radare2,22713,UNIX-like reverse engineering framework and command-line toolset,2012-07-03T07:42:26Z,2025-12-05T07:57:07Z
+40,SamyPesse/How-to-Make-a-Computer-Operating-System,https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System,22699,How to Make a Computer Operating System in C++,2013-11-29T17:36:32Z,2025-12-05T00:42:05Z
+41,lvgl/lvgl,https://github.com/lvgl/lvgl,22110,"Embedded graphics library to create beautiful UIs for any MCU, MPU and display type. ",2016-06-08T04:14:34Z,2025-12-05T14:49:18Z
+42,iovisor/bcc,https://github.com/iovisor/bcc,22012,"BCC - Tools for BPF-based Linux IO analysis, networking, monitoring, and more",2015-05-01T19:52:32Z,2025-12-05T14:20:14Z
+43,HandBrake/HandBrake,https://github.com/HandBrake/HandBrake,21593,HandBrake's development repository ,2015-08-22T16:32:28Z,2025-12-05T15:16:56Z
+44,julycoding/The-Art-Of-Programming-By-July-2nd,https://github.com/julycoding/The-Art-Of-Programming-By-July-2nd,21506,本项目曾冲到全球第一，干货集锦见本页面最底部，另完整精致的纸质版《编程之法：面试和算法心得》已在京东/当当上销售,2013-12-14T10:00:06Z,2025-12-05T07:21:32Z
+45,TheAlgorithms/C,https://github.com/TheAlgorithms/C,21414,"Collection of various algorithms in mathematics, machine learning, computer science, physics, etc implemented in C for educational purposes.",2016-07-16T10:17:03Z,2025-12-05T15:10:01Z
+46,micropython/micropython,https://github.com/micropython/micropython,21169,MicroPython - a lean and efficient Python implementation for microcontrollers and constrained systems,2013-12-20T11:47:07Z,2025-12-05T08:48:12Z
+47,gentilkiwi/mimikatz,https://github.com/gentilkiwi/mimikatz,21069,A little tool to play with Windows security,2014-04-06T18:30:02Z,2025-12-05T12:17:46Z
+48,timescale/timescaledb,https://github.com/timescale/timescaledb,20990,A time-series database for high-performance real-time analytics packaged as a Postgres extension,2017-03-07T20:03:41Z,2025-12-05T13:35:52Z
+49,jarun/nnn,https://github.com/jarun/nnn,20923,n³ The unorthodox terminal file manager,2016-08-20T14:10:14Z,2025-12-05T14:56:29Z
+50,DarkFlippers/unleashed-firmware,https://github.com/DarkFlippers/unleashed-firmware,20560,Flipper Zero Unleashed Firmware,2022-03-16T12:46:45Z,2025-12-05T14:59:58Z
+51,jart/cosmopolitan,https://github.com/jart/cosmopolitan,20231,build-once run-anywhere c library,2020-06-15T14:16:13Z,2025-12-05T05:36:22Z
+52,allinurl/goaccess,https://github.com/allinurl/goaccess,20028,GoAccess is a real-time web log analyzer and interactive viewer that runs in a terminal in *nix systems or through your browser.,2013-07-14T03:42:08Z,2025-12-05T00:49:26Z
+53,qmk/qmk_firmware,https://github.com/qmk/qmk_firmware,19905,Open-source keyboard firmware for Atmel AVR and Arm USB families,2014-12-08T22:02:05Z,2025-12-05T13:43:03Z
+54,Awesome-HarmonyOS/HarmonyOS,https://github.com/Awesome-HarmonyOS/HarmonyOS,19787,A curated list of awesome things related to HarmonyOS. 华为鸿蒙操作系统。,2019-08-09T11:24:00Z,2025-12-05T02:54:15Z
+55,postgres/postgres,https://github.com/postgres/postgres,19258,"Mirror of the official PostgreSQL GIT repository. Note that this is just a *mirror* - we don't work with pull requests on github. To contribute, please see https://wiki.postgresql.org/wiki/Submitting_a_Patch",2010-09-21T11:35:45Z,2025-12-05T15:20:11Z
+56,karpathy/llama2.c,https://github.com/karpathy/llama2.c,19002,Inference Llama 2 in one file of pure C,2023-07-23T05:15:06Z,2025-12-05T14:18:29Z
+57,ish-app/ish,https://github.com/ish-app/ish,18884,Linux shell for iOS,2017-05-05T00:10:35Z,2025-12-05T12:26:29Z
+58,pgvector/pgvector,https://github.com/pgvector/pgvector,18660,Open-source vector similarity search for Postgres,2021-04-20T21:13:52Z,2025-12-05T14:55:47Z
+59,fastfetch-cli/fastfetch,https://github.com/fastfetch-cli/fastfetch,18456,"A maintained, feature-rich and performance oriented, neofetch like system information tool.",2021-02-18T21:25:19Z,2025-12-05T15:00:58Z
+60,ExistentialAudio/BlackHole,https://github.com/ExistentialAudio/BlackHole,17831,BlackHole is a modern macOS audio loopback driver that allows applications to pass audio to other applications with zero additional latency.,2019-09-27T18:40:46Z,2025-12-05T12:08:11Z
+61,videolan/vlc,https://github.com/videolan/vlc,17032,"VLC media player - All pull requests are ignored, please use MRs on https://code.videolan.org/videolan/vlc",2012-01-29T19:30:36Z,2025-12-05T14:07:53Z
+62,ffmpegwasm/ffmpeg.wasm,https://github.com/ffmpegwasm/ffmpeg.wasm,16858,"FFmpeg for browser, powered by WebAssembly",2019-10-16T11:21:16Z,2025-12-05T13:23:42Z
+63,woltapp/blurhash,https://github.com/woltapp/blurhash,16832,A very compact representation of a placeholder for an image.,2019-06-26T10:45:33Z,2025-12-05T15:08:27Z
+64,espressif/esp-idf,https://github.com/espressif/esp-idf,16750,Espressif IoT Development Framework. Official development framework for Espressif SoCs.,2016-08-17T10:40:35Z,2025-12-05T15:08:41Z
+65,reactos/reactos,https://github.com/reactos/reactos,16616,A free Windows-compatible Operating System,2017-10-03T08:04:52Z,2025-12-05T14:48:40Z
+66,skywind3000/kcp,https://github.com/skywind3000/kcp,16476,:zap: KCP - A Fast and Reliable ARQ Protocol,2014-12-26T16:46:34Z,2025-12-05T11:35:18Z
+67,sandboxie-plus/Sandboxie,https://github.com/sandboxie-plus/Sandboxie,16460,Sandboxie Plus & Classic,2020-04-09T09:26:37Z,2025-12-05T12:31:05Z
+68,NVIDIA/open-gpu-kernel-modules,https://github.com/NVIDIA/open-gpu-kernel-modules,16418,NVIDIA Linux open GPU kernel module source,2022-05-02T22:00:04Z,2025-12-05T15:21:41Z
+69,UberGuidoZ/Flipper,https://github.com/UberGuidoZ/Flipper,16249,Playground (and dump) of stuff I make or modify for the Flipper Zero,2022-05-09T22:41:48Z,2025-12-05T08:46:58Z
+70,swaywm/sway,https://github.com/swaywm/sway,16247,i3-compatible Wayland compositor,2015-08-05T01:31:45Z,2025-12-05T03:34:01Z
+71,nicbarker/clay,https://github.com/nicbarker/clay,16073,High performance UI layout library in C.,2024-07-21T01:40:27Z,2025-12-05T15:11:50Z
+72,shadowsocks/shadowsocks-libev,https://github.com/shadowsocks/shadowsocks-libev,16070,Bug-fix-only libev port of shadowsocks. Future development moved to shadowsocks-rust,2012-12-15T08:11:07Z,2025-12-03T20:41:53Z
+73,tursodatabase/libsql,https://github.com/tursodatabase/libsql,15879,"libSQL is a fork of SQLite that is both Open Source, and Open Contributions.",2022-09-29T18:56:16Z,2025-12-05T12:50:49Z
+74,sumatrapdfreader/sumatrapdf,https://github.com/sumatrapdfreader/sumatrapdf,15775,SumatraPDF reader,2012-10-02T06:59:55Z,2025-12-05T11:44:18Z
+75,brunodev85/winlator,https://github.com/brunodev85/winlator,15653,Android application for running Windows applications with Wine and Box86/Box64,2023-07-26T13:02:11Z,2025-12-05T14:35:15Z
+76,davatorium/rofi,https://github.com/davatorium/rofi,15434,"Rofi: A window switcher, application launcher and dmenu replacement",2013-01-20T11:54:45Z,2025-12-05T14:46:44Z
+77,flipperdevices/flipperzero-firmware,https://github.com/flipperdevices/flipperzero-firmware,15172,Flipper Zero firmware source code,2020-07-31T21:43:20Z,2025-12-05T13:49:24Z
+78,ImageMagick/ImageMagick,https://github.com/ImageMagick/ImageMagick,15082,"ImageMagick is a free, open-source software suite for creating, editing, converting, and displaying images. It supports 200+ formats and offers powerful command-line tools and APIs for automation, scripting, and integration across platforms.",2015-05-17T20:07:50Z,2025-12-05T10:34:56Z
+79,systemd/systemd,https://github.com/systemd/systemd,14939,The systemd System and Service Manager ,2015-03-25T15:27:27Z,2025-12-05T14:24:29Z
+80,gojue/ecapture,https://github.com/gojue/ecapture,14811,Capturing SSL/TLS plaintext without a CA certificate using eBPF. Supported on Linux/Android kernels for amd64/arm64.,2022-03-13T07:40:48Z,2025-12-05T11:02:44Z
+81,acidanthera/OpenCorePkg,https://github.com/acidanthera/OpenCorePkg,14508,OpenCore bootloader,2019-04-03T19:14:29Z,2025-12-05T13:11:45Z
+82,SpacehuhnTech/esp8266_deauther,https://github.com/SpacehuhnTech/esp8266_deauther,14457,Affordable WiFi hacking platform for testing and learning,2017-01-07T13:39:23Z,2025-12-05T14:39:41Z
+83,glfw/glfw,https://github.com/glfw/glfw,14449,"A multi-platform library for OpenGL, OpenGL ES, Vulkan, window and input",2013-04-18T15:24:53Z,2025-12-05T12:43:38Z
+84,peng-zhihui/Dummy-Robot,https://github.com/peng-zhihui/Dummy-Robot,14259,我的超迷你机械臂机器人项目。,2021-10-07T11:42:58Z,2025-12-05T08:24:16Z
+85,libsdl-org/SDL,https://github.com/libsdl-org/SDL,14186,Simple DirectMedia Layer,2021-01-15T19:55:54Z,2025-12-05T14:09:17Z
+86,wazuh/wazuh,https://github.com/wazuh/wazuh,14144,Wazuh - The Open Source Security Platform. Unified XDR and SIEM protection for endpoints and cloud workloads.,2015-08-11T17:39:03Z,2025-12-05T14:57:40Z
+87,vurtun/nuklear,https://github.com/vurtun/nuklear,14119,A single-header ANSI C gui library,2015-03-25T13:32:06Z,2025-12-04T08:22:53Z
+88,memcached/memcached,https://github.com/memcached/memcached,14066,memcached development tree,2009-04-24T23:34:25Z,2025-12-05T14:48:58Z
+89,haiwen/seafile,https://github.com/haiwen/seafile,14039,"Beyond file syncing and sharing, a new way to organize your files with extensible file properties and flexible views",2012-07-12T06:47:55Z,2025-12-05T12:54:34Z
+90,arut/nginx-rtmp-module,https://github.com/arut/nginx-rtmp-module,13936,NGINX-based Media Streaming Server,2012-03-14T05:37:38Z,2025-12-04T14:53:56Z
+91,cloudwu/skynet,https://github.com/cloudwu/skynet,13880,A lightweight online game framework,2012-08-01T03:30:42Z,2025-12-05T14:35:52Z
+92,zephyrproject-rtos/zephyr,https://github.com/zephyrproject-rtos/zephyr,13853,"Primary Git Repository for the Zephyr Project. Zephyr is a new generation, scalable, optimized, secure RTOS for multiple hardware architectures.",2016-05-26T17:54:19Z,2025-12-05T11:55:55Z
+93,s-matyukevich/raspberry-pi-os,https://github.com/s-matyukevich/raspberry-pi-os,13698,Learning operating system development using Linux kernel and Raspberry Pi,2017-06-22T16:09:36Z,2025-12-05T12:04:19Z
+94,openresty/openresty,https://github.com/openresty/openresty,13500,High Performance Web Platform Based on Nginx and LuaJIT,2010-01-20T03:57:59Z,2025-12-05T05:41:07Z
+95,bol-van/zapret,https://github.com/bol-van/zapret,13434,DPI bypass multi platform,2016-02-15T13:30:50Z,2025-12-05T14:59:06Z
+96,coturn/coturn,https://github.com/coturn/coturn,13281,coturn TURN server project,2015-07-17T08:15:16Z,2025-12-05T13:54:52Z
+97,jedisct1/libsodium,https://github.com/jedisct1/libsodium,13215,"A modern, portable, easy to use crypto library.",2013-01-20T00:03:40Z,2025-12-05T07:36:10Z
+98,alibaba/tengine,https://github.com/alibaba/tengine,13153,A distribution of Nginx with some advanced features,2012-03-21T06:34:37Z,2025-12-05T07:59:36Z
+99,winsiderss/systeminformer,https://github.com/winsiderss/systeminformer,13128,"A free, powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware. Brought to you by Winsider Seminars & Solutions, Inc. @ http://www.windows-internals.com",2016-02-01T08:10:21Z,2025-12-05T14:16:47Z
+100,jonas/tig,https://github.com/jonas/tig,12985,Text-mode interface for git,2009-03-01T20:39:25Z,2025-12-04T17:50:40Z

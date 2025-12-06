@@ -1,0 +1,81 @@
+﻿项目名称,项目URL,提交ID,提交者,提交时间,提交信息,提交链接
+wg/wrk,https://github.com/wg/wrk,a211dd5,Will,2021-02-05T23:39:55Z,upgrade openssl to 1.1.1i,https://github.com/wg/wrk/commit/a211dd5a7050b1f9e8a9870b95513060e72ac4a0
+wg/wrk,https://github.com/wg/wrk,2d433a9,Will,2021-02-05T23:38:22Z,build bytecode.o from C source,https://github.com/wg/wrk/commit/2d433a9b43cfdabe4a76a29a4a352b6eb93be3a2
+wg/wrk,https://github.com/wg/wrk,2221a30,Will,2021-02-05T23:26:51Z,upgrade luajit to v2.1 branch (ec6edc5),https://github.com/wg/wrk/commit/2221a304059ad1ac5a2055cbf51eb4ec652feafd
+wg/wrk,https://github.com/wg/wrk,c769850,Will,2021-02-07T06:54:17Z,configure github actions,https://github.com/wg/wrk/commit/c7698504a9c8ea6dfdb3b6958af7fbe1adbc21eb
+wg/wrk,https://github.com/wg/wrk,0896020,Will,2019-04-18T01:51:16Z,add azure & circleci configs,https://github.com/wg/wrk/commit/0896020a2a28b84b1150e9b60933b746fe1dc761
+wg/wrk,https://github.com/wg/wrk,9f72145,Will,2019-04-18T01:48:58Z,fix library linking order,https://github.com/wg/wrk/commit/9f7214502a7cd095c9d006c1c9d4e1eedb94d900
+wg/wrk,https://github.com/wg/wrk,1091676,Will,2019-04-17T11:04:18Z,upgrade openssl to 1.1.1b,https://github.com/wg/wrk/commit/10916767724e3e7d522f1979def9f5d3174c69a3
+wg/wrk,https://github.com/wg/wrk,0bbe32c,Will,2019-04-17T11:02:40Z,define MACOSX_DEPLOYMENT_TARGET on macos,https://github.com/wg/wrk/commit/0bbe32c2f8cb5662615b0ad742ba540e845d2154
+wg/wrk,https://github.com/wg/wrk,7594a95,Will,2018-01-21T06:00:58Z,define _DEFAULT_SOURCE on linux,https://github.com/wg/wrk/commit/7594a95186ebdfa7cb35477a8a811f84e2a31b62
+wg/wrk,https://github.com/wg/wrk,a5d9db0,Will,2018-01-21T05:47:53Z,upgrade openssl to 1.1.0g,https://github.com/wg/wrk/commit/a5d9db0bd0fbd48c7e247557bd3c04508d09ef1b
+wg/wrk,https://github.com/wg/wrk,c080834,Will,2018-01-21T05:47:22Z,upgrade LuaJIT to 2.1.0-beta3,https://github.com/wg/wrk/commit/c080834bc2d8c4945aa640d73e36338e4bfc6dbf
+wg/wrk,https://github.com/wg/wrk,b9a832a,Will,2018-01-21T05:15:56Z,update zmalloc and http_parser,https://github.com/wg/wrk/commit/b9a832a7e0a512d7891ed239e8c58cafe207e0af
+wg/wrk,https://github.com/wg/wrk,9d71b2f,Will,2018-01-21T05:05:34Z,make lua imports version independent,https://github.com/wg/wrk/commit/9d71b2f6dd7371daed8fec7a316f9ae52ab903ca
+wg/wrk,https://github.com/wg/wrk,91655b5,Will,2017-02-05T05:43:13Z,"update ae, zmalloc & http_parser",https://github.com/wg/wrk/commit/91655b5520b524fc0b802ad12220c9dcd546757e
+wg/wrk,https://github.com/wg/wrk,45e4625,Will,2017-02-05T05:05:52Z,require openssl 1.1.0+,https://github.com/wg/wrk/commit/45e4625353d293266a16322b1f00d47ada84963a
+wg/wrk,https://github.com/wg/wrk,50305ed,Will,2016-03-26T00:18:07Z,send hostname in TLS SNI extension,https://github.com/wg/wrk/commit/50305ed1d89408c26067a970dcd5d9dbea19de9d
+wg/wrk,https://github.com/wg/wrk,040db59,Will,2016-03-20T08:03:36Z,generate version from git describe,https://github.com/wg/wrk/commit/040db59768d54e5957697a0e29306fe5ff220928
+wg/wrk,https://github.com/wg/wrk,bc6f679,Will,2016-03-20T07:26:48Z,support using system openssl & luajit,https://github.com/wg/wrk/commit/bc6f6797c489d93f56bc5adbf55eecfb54590b98
+wg/wrk,https://github.com/wg/wrk,29b1848,Will,2016-03-20T06:55:25Z,refactor dependencies & bundle openssl,https://github.com/wg/wrk/commit/29b1848551623f8233d016baf8d1664cbbe2ed9e
+wg/wrk,https://github.com/wg/wrk,03dc368,Will,2015-11-04T12:59:11Z,fix bug in lua table copying,https://github.com/wg/wrk/commit/03dc368674402f4b26a862f941f29887d06fd564
+wg/wrk,https://github.com/wg/wrk,8bf0b2e,Will,2015-11-04T12:40:57Z,handle unexpected EOF as error,https://github.com/wg/wrk/commit/8bf0b2e3d34a4c0fca3fbd013b675d29794ce0a5
+wg/wrk,https://github.com/wg/wrk,7cdede9,Will,2015-05-16T11:03:12Z,upgrade LuaJIT to 2.0.4,https://github.com/wg/wrk/commit/7cdede916a53da253c995767a92eec36a245a2cc
+wg/wrk,https://github.com/wg/wrk,0f8016c,Will,2015-05-08T05:54:10Z,add optional delay() script function,https://github.com/wg/wrk/commit/0f8016c907a7fdebde2e670489057681c73a09aa
+wg/wrk,https://github.com/wg/wrk,a209691,Will,2015-03-24T10:03:52Z,remove dependency on unspecified behavior,https://github.com/wg/wrk/commit/a20969192f7bc095ad3ad3e238a9a581e64ae4f9
+wg/wrk,https://github.com/wg/wrk,051c35f,Will,2015-03-18T12:18:33Z,add defines and includes for solaris,https://github.com/wg/wrk/commit/051c35fca69ef2eacf154e8a123786e42f480cce
+wg/wrk,https://github.com/wg/wrk,eb165ce,Will,2015-03-15T05:08:55Z,prepare wrk 4.0.0 release,https://github.com/wg/wrk/commit/eb165ce430943cc641e135dec7b8f9f7c5503a68
+wg/wrk,https://github.com/wg/wrk,ef6a836,Will,2015-02-21T02:31:44Z,remove calibration & improve CO correction,https://github.com/wg/wrk/commit/ef6a836b7d41cdbe8dae27d81d43f2d03a1665ef
+wg/wrk,https://github.com/wg/wrk,57f3b33,Will,2015-02-15T05:01:35Z,simplify script state setup,https://github.com/wg/wrk/commit/57f3b33f4f0430331447665f6f70f2a4c36cb6c0
+wg/wrk,https://github.com/wg/wrk,5158fc1,Will,2015-02-11T11:11:41Z,remove obsoleted timeout check,https://github.com/wg/wrk/commit/5158fc18d6c4d26434ed49a87de52ea466dbccb1
+wg/wrk,https://github.com/wg/wrk,39af03f,Will,2015-02-11T02:31:55Z,eliminate sampling and record all data,https://github.com/wg/wrk/commit/39af03f7ba30333aed173db9833340278ac223b6
+wg/wrk,https://github.com/wg/wrk,9b84d3e,Will,2015-02-07T08:03:17Z,add script setup() and thread methods,https://github.com/wg/wrk/commit/9b84d3e1a44df104d158465b39f6a4e4ff3fc8f9
+wg/wrk,https://github.com/wg/wrk,6f0aa32,Will,2015-02-07T05:08:30Z,move address resolution into lua,https://github.com/wg/wrk/commit/6f0aa32ede58ce82b5dfe591b711b00f9b5f1054
+wg/wrk,https://github.com/wg/wrk,93348e2,Will,2015-02-07T01:35:21Z,add CHANGES file and simplify script init,https://github.com/wg/wrk/commit/93348e28147b085b1003f88b62e16422593976ab
+wg/wrk,https://github.com/wg/wrk,db6da47,Will,2015-02-07T00:38:41Z,update LICENSE redistribution terms,https://github.com/wg/wrk/commit/db6da47fe3ee604d70304c8d10896f8349b972da
+wg/wrk,https://github.com/wg/wrk,a52c770,Will,2015-01-31T05:54:36Z,start request timer before first write,https://github.com/wg/wrk/commit/a52c770204a732aa63e1bb6eb241a70949e3a2a9
+wg/wrk,https://github.com/wg/wrk,b843194,Will,2015-01-31T05:44:54Z,use correct type for getopt_long result,https://github.com/wg/wrk/commit/b8431944edfd122f91ab8879a8d9c3f29a7d880c
+wg/wrk,https://github.com/wg/wrk,522ec60,Will,2015-01-31T05:33:27Z,pass EOF through to parser,https://github.com/wg/wrk/commit/522ec607f824f1928e3e0d0f02bf126117a93cb2
+wg/wrk,https://github.com/wg/wrk,6c15549,Will,2015-01-31T02:55:31Z,update http parser to 2.4.2,https://github.com/wg/wrk/commit/6c15549e77b15b2958afd5c56c964e1efc9dab18
+wg/wrk,https://github.com/wg/wrk,88aa6c5,Will,2014-08-05T12:49:25Z,copy request string from lua stack,https://github.com/wg/wrk/commit/88aa6c52377889cbc707d12f94cbb1359b7392d5
+wg/wrk,https://github.com/wg/wrk,0c64376,Will,2014-08-05T12:43:15Z,ensure connection structs are zeroed,https://github.com/wg/wrk/commit/0c64376d09982916ea028b92ed2f5f30fc89805b
+wg/wrk,https://github.com/wg/wrk,205a196,Will,2014-05-15T11:11:07Z,minor Makefile improvements,https://github.com/wg/wrk/commit/205a1960c8b8de5f500bb143863ae293456b7add
+wg/wrk,https://github.com/wg/wrk,1408856,Will,2014-05-15T11:09:09Z,import LuaJIT 2.0.3,https://github.com/wg/wrk/commit/14088561d932a24efd507cb671d7795f4fba1b35
+wg/wrk,https://github.com/wg/wrk,5b2fa06,Will,2014-02-10T10:35:13Z,cleanup & pipelining for 3.1.0 release,https://github.com/wg/wrk/commit/5b2fa061513f5df8c2243fd3e5b5bcbd34fc07e7
+wg/wrk,https://github.com/wg/wrk,4facab7,Will,2013-12-08T10:17:06Z,support pipelining via script request(),https://github.com/wg/wrk/commit/4facab702ecd204c9a27bf49c12f97df5f9782a9
+wg/wrk,https://github.com/wg/wrk,ade03d2,Will,2014-02-10T08:27:49Z,support any existing TLS/SSL version,https://github.com/wg/wrk/commit/ade03d2348497b4e6231a7aac7737a0270fee183
+wg/wrk,https://github.com/wg/wrk,44aa1b4,Will,2013-12-07T05:09:44Z,add a few example scripts,https://github.com/wg/wrk/commit/44aa1b4aab4eff975325c390fbde884164a20256
+wg/wrk,https://github.com/wg/wrk,7763ce3,Will,2013-11-16T03:06:29Z,correct dependency order for parallel builds,https://github.com/wg/wrk/commit/7763ce3c9b7f941918b23060f5454fef5d1de6e7
+wg/wrk,https://github.com/wg/wrk,2a4b640,Will,2013-11-10T07:16:53Z,fix Host header with port or IPv6 address,https://github.com/wg/wrk/commit/2a4b64033a11a30bbb98d70e9c7e52c4161c60e3
+wg/wrk,https://github.com/wg/wrk,b03bcb9,Will,2013-11-09T03:30:33Z,use $CURDIR intead of $PWD in Makefile,https://github.com/wg/wrk/commit/b03bcb9accb2d2097bc8908b571222472be16b4c
+wg/wrk,https://github.com/wg/wrk,fe4c1a6,Will,2013-10-05T04:49:46Z,read all available bytes when socket ready,https://github.com/wg/wrk/commit/fe4c1a692be06aa8fc1bfed5a2daee83710f6878
+wg/wrk,https://github.com/wg/wrk,796f4e1,Will,2013-10-05T03:23:09Z,handle failure to create event loop,https://github.com/wg/wrk/commit/796f4e1226befe1b45c8fe57fc3cc72391a0050c
+wg/wrk,https://github.com/wg/wrk,6845a10,Will,2013-09-22T03:54:25Z,finalize and merge lua scripting,https://github.com/wg/wrk/commit/6845a10ca3529998c8c4dc6da23b7caec819498e
+wg/wrk,https://github.com/wg/wrk,a2d7b36,Will,2013-09-08T04:21:11Z,check if generated request is valid,https://github.com/wg/wrk/commit/a2d7b361f9413b4ec553b9d00987c260702b3d10
+wg/wrk,https://github.com/wg/wrk,558a6b0,Will,2013-08-31T02:41:21Z,add optional response() script function,https://github.com/wg/wrk/commit/558a6b04ceb0b0626a69627d01c60f642e3d2b53
+wg/wrk,https://github.com/wg/wrk,1e7411a,Will,2013-08-18T11:37:21Z,call optional done() script function,https://github.com/wg/wrk/commit/1e7411aebd9d88aaac976a369cc3aa0b26ebfeca
+wg/wrk,https://github.com/wg/wrk,e24ed26,Will,2013-08-18T04:38:06Z,generate requests with lua script,https://github.com/wg/wrk/commit/e24ed26a43da53dfd05e150306e46cdd715a8372
+wg/wrk,https://github.com/wg/wrk,c6679dc,Will,2013-08-11T07:26:32Z,import LuaJIT 2.0.2,https://github.com/wg/wrk/commit/c6679dc58a72dd468667d5e43e55aad4b585d621
+wg/wrk,https://github.com/wg/wrk,408b4dc,Will,2013-06-30T14:06:59Z,automatic sampling interval calibration,https://github.com/wg/wrk/commit/408b4dc4c2749dbe355b8e93ac49ea1884f04488
+wg/wrk,https://github.com/wg/wrk,615b548,Will,2013-06-26T07:19:16Z,increase rate calculation precision,https://github.com/wg/wrk/commit/615b548729a77951c97b9c75a9f90bd6c5e9079a
+wg/wrk,https://github.com/wg/wrk,256b475,Will,2013-06-22T06:48:48Z,finalize and integrate SSL support,https://github.com/wg/wrk/commit/256b4756d3c0ba5c8fb00921733198e6be9fb8d6
+wg/wrk,https://github.com/wg/wrk,87a5dae,Will,2013-06-21T03:31:05Z,correctly handle partial writes,https://github.com/wg/wrk/commit/87a5dae12cd584540908a1e58860fc2b5b03246f
+wg/wrk,https://github.com/wg/wrk,6fd3ee1,Will,2013-05-29T00:37:18Z,rewrite stats recording and analysis,https://github.com/wg/wrk/commit/6fd3ee1080cefc56e0989b82a3414504f9a47279
+wg/wrk,https://github.com/wg/wrk,1b7161c,Will,2013-05-24T03:00:12Z,support setting request method & body,https://github.com/wg/wrk/commit/1b7161cf0e45e5f23b599a8e76e4513ca353fa70
+wg/wrk,https://github.com/wg/wrk,acb9a78,Will,2013-05-23T07:07:41Z,reduce system calls to improve performance,https://github.com/wg/wrk/commit/acb9a78925dfc2276aa2b42d58a485c790ebc0d2
+wg/wrk,https://github.com/wg/wrk,d058222,Will,2013-05-08T11:19:27Z,add option to print latency distribution,https://github.com/wg/wrk/commit/d0582223a24891d5145455ec26a966760e60b7be
+wg/wrk,https://github.com/wg/wrk,05fcf7e,Will,2013-04-21T08:24:10Z,update http parser to 2.1,https://github.com/wg/wrk/commit/05fcf7e8f8269838724b24d1cd99a0d220f07a86
+wg/wrk,https://github.com/wg/wrk,6c4064c,Will,2013-04-10T11:53:58Z,add option to set socket/request timeout,https://github.com/wg/wrk/commit/6c4064cd980c5a974171acd28bb369eb2c3adf3d
+wg/wrk,https://github.com/wg/wrk,8225945,Will,2013-04-10T11:53:30Z,switch to time as basis of benchmark duration,https://github.com/wg/wrk/commit/8225945f325d6207f95dae9f89f40237066dd869
+wg/wrk,https://github.com/wg/wrk,86a23c6,Will,2013-04-07T05:37:24Z,stop after receiving SIGINT,https://github.com/wg/wrk/commit/86a23c6beb1d0f8f76021d69054b543aec974e64
+wg/wrk,https://github.com/wg/wrk,5496c58,Will,2013-04-07T04:43:22Z,stop after error count exceeds predefined amount,https://github.com/wg/wrk/commit/5496c588eb0f92efb542887cb9faa1b28fc25c62
+wg/wrk,https://github.com/wg/wrk,5f09256,Will,2013-04-07T04:41:19Z,improve remote host addr resolution,https://github.com/wg/wrk/commit/5f09256ac2881c352358b1e1c95e05f1bccf6cdd
+wg/wrk,https://github.com/wg/wrk,ae7a043,Will,2013-03-10T07:24:27Z,allow Host header to be overridden with -H,https://github.com/wg/wrk/commit/ae7a043678c92503b3c09d6f18a689692b770f60
+wg/wrk,https://github.com/wg/wrk,43d3193,Will,2013-03-03T09:24:41Z,add thread-related CFLAGS needed on some platforms,https://github.com/wg/wrk/commit/43d31939142c13aff594e8a9da0756b5debc0290
+wg/wrk,https://github.com/wg/wrk,a1a46c4,Will,2013-02-16T08:20:40Z,more robust socket error handling,https://github.com/wg/wrk/commit/a1a46c4e0dd155799b5dd9ce9d37e88ad2fb5a8a
+wg/wrk,https://github.com/wg/wrk,c00e947,Will,2013-02-16T02:38:37Z,set default request path to /,https://github.com/wg/wrk/commit/c00e9470e0326f278eafda2f21a320f3bd5c6600
+wg/wrk,https://github.com/wg/wrk,54a623b,Will,2013-01-12T07:21:02Z,add support for solaris,https://github.com/wg/wrk/commit/54a623bd25b8e7b888c335ddd894f0fa4f72f98b
+wg/wrk,https://github.com/wg/wrk,17b7971,Will,2013-01-12T07:09:32Z,import updated ae from redis 2.6.8,https://github.com/wg/wrk/commit/17b79717f6282b4b282877f2939d6b6c6d57b774
+wg/wrk,https://github.com/wg/wrk,6d143f1,Will,2012-03-25T10:21:06Z,use more appropriate integer types,https://github.com/wg/wrk/commit/6d143f164d43aece6b488cc0e6c8dfece572ece1
+wg/wrk,https://github.com/wg/wrk,ae9777b,Will,2012-03-25T09:03:46Z,eliminate uses of reserved identifiers,https://github.com/wg/wrk/commit/ae9777b78d7722401f9d6fe0db50353dc125d801
+wg/wrk,https://github.com/wg/wrk,68ccc0c,Will,2012-03-18T06:16:09Z,first public release of wrk,https://github.com/wg/wrk/commit/68ccc0ce6889b8eedcba433adfc9165a1d24b71a

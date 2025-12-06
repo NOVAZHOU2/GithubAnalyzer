@@ -1,0 +1,201 @@
+﻿项目名称,项目URL,提交ID,提交者,提交时间,提交信息,提交链接
+bol-van/zapret,https://github.com/bol-van/zapret,88b6b79,bol-van,2025-12-04T16:28:58Z,nfqws: add missing ssid_filter list init,https://github.com/bol-van/zapret/commit/88b6b791e9d01fd66dc42b335da8b34041e91911
+bol-van/zapret,https://github.com/bol-van/zapret,4818517,bol-van,2025-12-04T11:56:29Z,update changes.txt,https://github.com/bol-van/zapret/commit/48185174cf6c31ef0e37dfcfd13fffd211a7b104
+bol-van/zapret,https://github.com/bol-van/zapret,aa8d903,bol-van,2025-12-04T11:54:19Z,blockcheck: fix broken DNS cache,https://github.com/bol-van/zapret/commit/aa8d903bb12e475fb97701d604d6050fe4f06fef
+bol-van/zapret,https://github.com/bol-van/zapret,cb653be,bol-van,2025-12-02T05:54:10Z,blockcheck: check  existense instead of curl,https://github.com/bol-van/zapret/commit/cb653bedd6d54d17b8c911e0c4eb1c0dd5e1d0b9
+bol-van/zapret,https://github.com/bol-van/zapret,534c88c,bol-van,2025-12-02T05:53:38Z,fix 'which' function behavior with absolute paths,https://github.com/bol-van/zapret/commit/534c88c96a581259fd056eaae3a50fe87880d3f3
+bol-van/zapret,https://github.com/bol-van/zapret,7be9790,bol-van,2025-12-01T06:33:15Z,remove obsolete file,https://github.com/bol-van/zapret/commit/7be979083928f106c47fe48cf61791c12cac60b9
+bol-van/zapret,https://github.com/bol-van/zapret,14d7f27,bol-van,2025-11-24T17:57:38Z,github: delete windivert filters from embedded build,https://github.com/bol-van/zapret/commit/14d7f27b6a7311f651136f1b7d65c81afb1354a9
+bol-van/zapret,https://github.com/bol-van/zapret,97cefba,bol-van,2025-11-21T14:07:44Z,update .gitattributes,https://github.com/bol-van/zapret/commit/97cefbace9eee57c5f3799743df9d755690dac4c
+bol-van/zapret,https://github.com/bol-van/zapret,43cea80,bol-van,2025-11-18T12:14:42Z,nfqws: fix crypto code,https://github.com/bol-van/zapret/commit/43cea8061984bbaff6f17e3fe55ba7a4bd91d6b6
+bol-van/zapret,https://github.com/bol-van/zapret,ce7d91a,bol-van,2025-11-14T21:22:44Z,blockcheck: fix broken ip block tests,https://github.com/bol-van/zapret/commit/ce7d91a7caa9a9d8d4f3d2ea7527e6b51abbc82f
+bol-van/zapret,https://github.com/bol-van/zapret,105ac57,bol-van,2025-11-11T11:55:38Z,add 100.64.0.0/10 to default exclude,https://github.com/bol-van/zapret/commit/105ac5765509c22d8be32a56773656e126a27bd9
+bol-van/zapret,https://github.com/bol-van/zapret,06f5305,bol-van,2025-11-11T06:42:48Z,nfqws: remove unneeded code,https://github.com/bol-van/zapret/commit/06f530561794b8a18785d9678f12b192d5f6ed69
+bol-van/zapret,https://github.com/bol-van/zapret,45c3f00,bol-van,2025-11-11T06:39:59Z,nfqws: do not increase retrans counter every reasm piece,https://github.com/bol-van/zapret/commit/45c3f005392c2cd4999c9bd19b88394126c2a9b1
+bol-van/zapret,https://github.com/bol-van/zapret,0c0c254,bol-van,2025-11-10T09:48:44Z,blockcheck: shield curl,https://github.com/bol-van/zapret/commit/0c0c2547db61d6b7b74be04511a1f5a0c12702cb
+bol-van/zapret,https://github.com/bol-van/zapret,60d182b,bol-van,2025-11-08T19:12:23Z,update en WSL info,https://github.com/bol-van/zapret/commit/60d182b97e35bac1fb589001bc1c0077b8a59480
+bol-van/zapret,https://github.com/bol-van/zapret,907b530,bol-van,2025-11-08T19:11:15Z,update WSL info,https://github.com/bol-van/zapret/commit/907b530068b47414409ef1201fd2e4f231e1dd6c
+bol-van/zapret,https://github.com/bol-van/zapret,8763768,bol-van,2025-11-08T19:06:48Z,update WSL info,https://github.com/bol-van/zapret/commit/8763768180912aa6ebe490ff060af38db47673b8
+bol-van/zapret,https://github.com/bol-van/zapret,793cd76,bol-van,2025-11-08T19:05:21Z,update WSL info,https://github.com/bol-van/zapret/commit/793cd7662143a8b08850ef9a86d278c7c0978fc8
+bol-van/zapret,https://github.com/bol-van/zapret,9b47b21,bol-van,2025-11-08T17:46:09Z,"nfqws: ipv6 ah header length is in 32-bit words, not 64-bit",https://github.com/bol-van/zapret/commit/9b47b21918fcfef0a607d6d70fd304dc0f482ab0
+bol-van/zapret,https://github.com/bol-van/zapret,caa364e,bol-van,2025-11-06T19:14:47Z,blockcheck: fix doh resolve failure if spaces in the path,https://github.com/bol-van/zapret/commit/caa364e0edf4c88af340eba87f17486a59f023df
+bol-van/zapret,https://github.com/bol-van/zapret,76992dc,bol-van,2025-11-05T14:08:34Z,nfqws: remove duplicate defines,https://github.com/bol-van/zapret/commit/76992dc3d90a751e956f07bdf812372db070ebef
+bol-van/zapret,https://github.com/bol-van/zapret,0b8e0dc,bol-van,2025-10-30T13:19:52Z,blockcheck: replace ipv6 only ntc.party to ej.ru,https://github.com/bol-van/zapret/commit/0b8e0dc97df8c553dda2f3faf2df5eb664739c34
+bol-van/zapret,https://github.com/bol-van/zapret,1408c38,bol-van,2025-10-28T18:50:46Z,blockcheck: fix - sign regression,https://github.com/bol-van/zapret/commit/1408c38522193e6debdf7491a6cd7ee44a8fce05
+bol-van/zapret,https://github.com/bol-van/zapret,cea968d,bol-van,2025-10-28T15:24:32Z,blockcheck: filter out :,https://github.com/bol-van/zapret/commit/cea968d2593e4c79d10b85b74e7c83cd5de8e1b6
+bol-van/zapret,https://github.com/bol-van/zapret,f91bca1,bol-van,2025-10-28T11:41:07Z,"blockcheck: support URIs, support disabling HEAD for https",https://github.com/bol-van/zapret/commit/f91bca170ac468f75203c7ade8128478bb431470
+bol-van/zapret,https://github.com/bol-van/zapret,9d5c919,bol-van,2025-10-27T04:27:40Z,Merge pull request #1834 from ooovlad/fix-readme-typo  Fix the annoying typo that got me confused on my attempt to set up,https://github.com/bol-van/zapret/commit/9d5c9191be3e696cf9834cad0b0fb0db8f10e178
+bol-van/zapret,https://github.com/bol-van/zapret,f4ce79a,Vlad,2025-10-26T21:02:33Z,"Fix the annoying typo that got me confused when I was trying to set up the program  Please correct this typo in the file name, as it caused me to stumble twice when setting up zapret. I took the file name directly from the readme, and then I found out that it was incorrect. Then after a while I forgot about it and took the file name from the readme again. So I decided to make a pull request.",https://github.com/bol-van/zapret/commit/f4ce79a97c737155fde0af24600f5cceb318b4eb
+bol-van/zapret,https://github.com/bol-van/zapret,845b9ed,bol-van,2025-10-25T05:47:11Z,Merge pull request #1821 from ilyuXer/patch-1  Update readme.md,https://github.com/bol-van/zapret/commit/845b9edf85ef2ec5cde35f3540a35bedbdcd992d
+bol-van/zapret,https://github.com/bol-van/zapret,5ec5ce8,ilyuXer,2025-10-24T18:01:01Z,Update readme.md,https://github.com/bol-van/zapret/commit/5ec5ce82464a6698724218964816ed6c6cc1c890
+bol-van/zapret,https://github.com/bol-van/zapret,29935b0,bol-van,2025-10-17T12:11:08Z,update docs,https://github.com/bol-van/zapret/commit/29935b09347be15ecf6536950a2bce12b41e0b0b
+bol-van/zapret,https://github.com/bol-van/zapret,fe12b55,bol-van,2025-10-17T12:07:10Z,update docs,https://github.com/bol-van/zapret/commit/fe12b551810609014d27eb3652fc5897d186c223
+bol-van/zapret,https://github.com/bol-van/zapret,2cafc7d,bol-van,2025-10-17T11:35:42Z,nfqws: optimize,https://github.com/bol-van/zapret/commit/2cafc7ddeb0166691e4203430c6b2c1928aa4df0
+bol-van/zapret,https://github.com/bol-van/zapret,2daf764,bol-van,2025-10-17T11:20:54Z,nfqws: optimize,https://github.com/bol-van/zapret/commit/2daf764760db0346e5c1b85462012cd24ebe6c3f
+bol-van/zapret,https://github.com/bol-van/zapret,078022b,bol-van,2025-10-17T11:15:36Z,nfqws: minor bug,https://github.com/bol-van/zapret/commit/078022bccfe5fe43c554018bffc704c472d67870
+bol-van/zapret,https://github.com/bol-van/zapret,57778b6,bol-van,2025-10-17T11:10:11Z,"nfqws: --dup-ip-id, --*-tcp-flags-*, --wssize-forced-cutoff",https://github.com/bol-van/zapret/commit/57778b624976b3426a4d0f283e3d6a5f9a74d69b
+bol-van/zapret,https://github.com/bol-van/zapret,845f4b4,bol-van,2025-10-13T13:43:52Z,remove bad comments from custom scripts,https://github.com/bol-van/zapret/commit/845f4b43efee4fad7456796f9f5bc85d79bcc266
+bol-van/zapret,https://github.com/bol-van/zapret,a485030,bol-van,2025-10-13T13:42:59Z,50-quic4all,https://github.com/bol-van/zapret/commit/a48503042375f49a5560c45863995d42a75c9579
+bol-van/zapret,https://github.com/bol-van/zapret,6821093,bol-van,2025-10-13T13:41:49Z,50-quic4all,https://github.com/bol-van/zapret/commit/68210934933fb07270fd5e4f1ad9fdf60459cc7f
+bol-van/zapret,https://github.com/bol-van/zapret,0dea2d6,bol-van,2025-10-13T13:13:24Z,blockcheck: MIN/MAX_AUTOTTL_DELTA,https://github.com/bol-van/zapret/commit/0dea2d6ad09336631d6f42b94ca105d35a39ac5c
+bol-van/zapret,https://github.com/bol-van/zapret,16e71fc,bol-van,2025-10-13T12:52:16Z,nfqws: fix --ip-id when changing profiles,https://github.com/bol-van/zapret/commit/16e71fc5fcd24c579bc78856a023082287f22852
+bol-van/zapret,https://github.com/bol-van/zapret,b279598,bol-van,2025-10-13T12:29:57Z,update docs,https://github.com/bol-van/zapret/commit/b2795989b7f37262cff407218d53d8d40e5a325c
+bol-van/zapret,https://github.com/bol-van/zapret,dbfc20a,bol-van,2025-10-13T11:51:42Z,nfqws: ip_id improvements,https://github.com/bol-van/zapret/commit/dbfc20a5bc037b8dc721eeb7a8a4a66ec5f59083
+bol-van/zapret,https://github.com/bol-van/zapret,2aa301b,bol-van,2025-10-13T09:55:04Z,update docs,https://github.com/bol-van/zapret/commit/2aa301bf0b43101d00ddd096c27ac57ce2b3f450
+bol-van/zapret,https://github.com/bol-van/zapret,324aa12,bol-van,2025-10-13T09:35:43Z,update docs,https://github.com/bol-van/zapret/commit/324aa12ecfcf6ee4530e151ce1686462473396c2
+bol-van/zapret,https://github.com/bol-van/zapret,af5cf62,bol-van,2025-10-13T09:35:07Z,update docs,https://github.com/bol-van/zapret/commit/af5cf623be91a324a4febb22ad209b0a6b0b8c4c
+bol-van/zapret,https://github.com/bol-van/zapret,9556eff,bol-van,2025-10-13T09:34:41Z,update docs,https://github.com/bol-van/zapret/commit/9556eff09150c81ecde4a6caaa0363edb3153b6a
+bol-van/zapret,https://github.com/bol-van/zapret,ca42c88,bol-van,2025-10-13T09:33:54Z,update docs,https://github.com/bol-van/zapret/commit/ca42c88ce0a5240f5464d1051bde5c55955d2e8d
+bol-van/zapret,https://github.com/bol-van/zapret,62cdc8b,bol-van,2025-10-12T17:15:52Z,nfqws: random ip_id not zero,https://github.com/bol-van/zapret/commit/62cdc8bf137f7d992ec31fb3740750cce0530352
+bol-van/zapret,https://github.com/bol-van/zapret,643c254,bol-van,2025-10-12T17:08:08Z,nfqws: --ip-id,https://github.com/bol-van/zapret/commit/643c254fab9b5a12756f341271d62119fc6d20dd
+bol-van/zapret,https://github.com/bol-van/zapret,3f2ef1f,bol-van,2025-10-12T12:23:11Z,windivert_part.quic_initial_ietf.txt,https://github.com/bol-van/zapret/commit/3f2ef1feeef5e89bcf9989dc159357448b45e728
+bol-van/zapret,https://github.com/bol-van/zapret,3c8e4ed,bol-van,2025-10-12T11:35:27Z,update docs,https://github.com/bol-van/zapret/commit/3c8e4ed15da438c73b1717da6fdfbfc2ddbf9d90
+bol-van/zapret,https://github.com/bol-van/zapret,8c06a63,bol-van,2025-10-12T11:34:49Z,update docs,https://github.com/bol-van/zapret/commit/8c06a6335d0f8c74b587dc38d0f7c68f6e9b4738
+bol-van/zapret,https://github.com/bol-van/zapret,f12cae3,bol-van,2025-10-12T11:34:21Z,update docs,https://github.com/bol-van/zapret/commit/f12cae367493ac9d7996ac2c1a29fcd228c1a10d
+bol-van/zapret,https://github.com/bol-van/zapret,170281b,bol-van,2025-10-12T11:33:16Z,update docs,https://github.com/bol-van/zapret/commit/170281bfa63321bddca37e8a53ae03de4dda32c4
+bol-van/zapret,https://github.com/bol-van/zapret,5d47474,bol-van,2025-10-12T11:30:05Z,update docs,https://github.com/bol-van/zapret/commit/5d4747458feeaac127e894f4cb8067654b9d99ae
+bol-van/zapret,https://github.com/bol-van/zapret,5774e88,bol-van,2025-10-12T11:19:04Z,update docs,https://github.com/bol-van/zapret/commit/5774e883d60b66e10ec47573db456ae993b99ed4
+bol-van/zapret,https://github.com/bol-van/zapret,80b801c,bol-van,2025-10-10T14:53:14Z,nfqws: fix seqovl>=split_pos message,https://github.com/bol-van/zapret/commit/80b801c1ca8171219fd36f0bb1a8c24c6174a86d
+bol-van/zapret,https://github.com/bol-van/zapret,9d8ee39,bol-van,2025-10-08T13:32:56Z,"Revert ""blockcheck: enable ECN in windows""  This reverts commit 4d35d8d1ece8ec13d25dccd476790aa8b7bbfc90.",https://github.com/bol-van/zapret/commit/9d8ee398c3df838e86dde78ef2e3863430a0e12c
+bol-van/zapret,https://github.com/bol-van/zapret,4d35d8d,bol-van,2025-10-07T07:19:02Z,blockcheck: enable ECN in windows,https://github.com/bol-van/zapret/commit/4d35d8d1ece8ec13d25dccd476790aa8b7bbfc90
+bol-van/zapret,https://github.com/bol-van/zapret,977d117,bol-van,2025-10-04T17:45:24Z,nfqws: prevent memleak if multiple fakedsplit pattern options,https://github.com/bol-van/zapret/commit/977d117417091c5a2daa5691738cc5a170ba0673
+bol-van/zapret,https://github.com/bol-van/zapret,cc8313d,bol-van,2025-10-04T17:18:39Z,nfqws: optimize default fakedsplit pattern,https://github.com/bol-van/zapret/commit/cc8313db512d3a93175a2b0194ffdcf1f4a2ca0b
+bol-van/zapret,https://github.com/bol-van/zapret,1e51f90,bol-van,2025-10-04T16:59:19Z,nfqws: fix fakedsplit-pattern if not specified,https://github.com/bol-van/zapret/commit/1e51f901301631678261f0d31ed3fcc048454d51
+bol-van/zapret,https://github.com/bol-van/zapret,da6b89e,bol-van,2025-10-04T15:31:48Z,blockcheck: print some OPENWRT_xxx from /etc/os-release,https://github.com/bol-van/zapret/commit/da6b89e73939f26e2758e821580787ab8928bbad
+bol-van/zapret,https://github.com/bol-van/zapret,9047044,bol-van,2025-10-04T15:26:07Z,blockcheck: print PRETTY_NAME from /etc/os-release,https://github.com/bol-van/zapret/commit/90470440a7dcff01d92192d32dd3eb0eb4072890
+bol-van/zapret,https://github.com/bol-van/zapret,a5c9d79,bol-van,2025-10-04T08:58:59Z,update docs,https://github.com/bol-van/zapret/commit/a5c9d79417bbddc8ab91e2f09f90b3656d4c3a8b
+bol-van/zapret,https://github.com/bol-van/zapret,c003ef2,bol-van,2025-10-04T08:58:35Z,update docs,https://github.com/bol-van/zapret/commit/c003ef2a7b92bcc49840a595852b371e0744c571
+bol-van/zapret,https://github.com/bol-van/zapret,42541fc,bol-van,2025-10-04T08:57:53Z,update docs,https://github.com/bol-van/zapret/commit/42541fcab801cd9ec4b4e3da9ef9e8a33e3831ae
+bol-van/zapret,https://github.com/bol-van/zapret,20b5952,bol-van,2025-10-04T08:56:07Z,update docs,https://github.com/bol-van/zapret/commit/20b5952978d9a61d9777606203d532128a3251d9
+bol-van/zapret,https://github.com/bol-van/zapret,4b6aa1b,bol-van,2025-10-04T08:43:06Z,nfqws: help text for more altorders,https://github.com/bol-van/zapret/commit/4b6aa1b5f9fcbd6271b6ad5ddc4baa3db8334b42
+bol-van/zapret,https://github.com/bol-van/zapret,9e141dc,bol-van,2025-10-04T08:30:38Z,update docs,https://github.com/bol-van/zapret/commit/9e141dcefdbc2e731c78f5e2c36f5f32c6dbe7f9
+bol-van/zapret,https://github.com/bol-van/zapret,b1b992e,bol-van,2025-10-04T08:28:29Z,update docs,https://github.com/bol-van/zapret/commit/b1b992eb3f311610272ed8baa619253c52ca12bb
+bol-van/zapret,https://github.com/bol-van/zapret,2d061c9,bol-van,2025-10-04T08:27:31Z,update docs,https://github.com/bol-van/zapret/commit/2d061c911a0d8243ac969e223b3061d50b5485fc
+bol-van/zapret,https://github.com/bol-van/zapret,a213084,bol-van,2025-10-04T08:26:42Z,update docs,https://github.com/bol-van/zapret/commit/a213084188a0215159234959c7716edfd9712649
+bol-van/zapret,https://github.com/bol-van/zapret,1c7ec32,bol-van,2025-10-04T08:26:00Z,update docs,https://github.com/bol-van/zapret/commit/1c7ec32b96d626ac2a7bccb3377e9b814a6139c1
+bol-van/zapret,https://github.com/bol-van/zapret,dcd9cfb,bol-van,2025-10-04T08:02:23Z,"nfqws: ip_id fixes, more altorder support",https://github.com/bol-van/zapret/commit/dcd9cfbb2b82fbaf10c44ae82b8b008bbfa45b5d
+bol-van/zapret,https://github.com/bol-van/zapret,beb0692,bol-van,2025-10-03T07:48:23Z,quick_start: minor change,https://github.com/bol-van/zapret/commit/beb0692d285d81483589917fc508bd652782b68b
+bol-van/zapret,https://github.com/bol-van/zapret,140af2b,bol-van,2025-10-03T07:47:40Z,quick_start: remove easy option,https://github.com/bol-van/zapret/commit/140af2b7410d30a32f83a726dae84f25be9bd2de
+bol-van/zapret,https://github.com/bol-van/zapret,f8cc109,bol-van,2025-09-24T13:32:48Z,"nfqws: remove ""file containing"" from help text",https://github.com/bol-van/zapret/commit/f8cc109f0b25636d23da052b45a99b808cc611ad
+bol-van/zapret,https://github.com/bol-van/zapret,b4a2f44,bol-van,2025-09-24T13:26:39Z,remove -2b fakes,https://github.com/bol-van/zapret/commit/b4a2f44d56bf4b52389217ed1c70467363a20830
+bol-van/zapret,https://github.com/bol-van/zapret,14d05d8,bol-van,2025-09-24T13:25:08Z,update docs,https://github.com/bol-van/zapret/commit/14d05d8012ee1cb7d409ec3e4a950a12a04c92ac
+bol-van/zapret,https://github.com/bol-van/zapret,71d5afe,bol-van,2025-09-24T13:24:36Z,update docs,https://github.com/bol-van/zapret/commit/71d5afeaf44cc558a14aa963fd5e1611350a44e0
+bol-van/zapret,https://github.com/bol-van/zapret,45df8bf,bol-van,2025-09-24T13:21:59Z,update docs,https://github.com/bol-van/zapret/commit/45df8bfb09fd92b46d0c85a10af91c7f282445a1
+bol-van/zapret,https://github.com/bol-van/zapret,784058c,bol-van,2025-09-24T13:08:25Z,nfqws: support +offset@filename fake/pattern loading,https://github.com/bol-van/zapret/commit/784058cf669b7f9fee364c8272a5285785f0e02a
+bol-van/zapret,https://github.com/bol-van/zapret,ce367b1,bol-van,2025-09-24T07:31:06Z,nfqws: optimize ip_id behavior,https://github.com/bol-van/zapret/commit/ce367b1a912e41303d47ebaa6b707ecc3cae8604
+bol-van/zapret,https://github.com/bol-van/zapret,a832c19,bol-van,2025-09-23T11:20:23Z,blockcheck: test --dpi-desync-fakedsplit-mod=altorder=1,https://github.com/bol-van/zapret/commit/a832c19974fcbd030453f442d03ec3a4b89d454a
+bol-van/zapret,https://github.com/bol-van/zapret,2c14109,bol-van,2025-09-23T11:13:39Z,update docs,https://github.com/bol-van/zapret/commit/2c14109163b53539f31f5c03ec4753b7a58258a4
+bol-van/zapret,https://github.com/bol-van/zapret,c467e69,bol-van,2025-09-23T11:06:23Z,nfqws: --dpi-desync-fakedsplit-mod=altorder,https://github.com/bol-van/zapret/commit/c467e696e3115a451627f2a291757a62472a5dcd
+bol-van/zapret,https://github.com/bol-van/zapret,528c27a,bol-van,2025-09-23T10:16:18Z,update docs,https://github.com/bol-van/zapret/commit/528c27a01a774a2579dd66e55d8cf89332defa8e
+bol-van/zapret,https://github.com/bol-van/zapret,c2f1e70,bol-van,2025-09-23T09:21:47Z,blockcheck: test split fake,https://github.com/bol-van/zapret/commit/c2f1e708fc0c1598a5a303efb5309ea6cc7efc56
+bol-van/zapret,https://github.com/bol-van/zapret,211a4f4,bol-van,2025-09-23T08:54:59Z,update docs,https://github.com/bol-van/zapret/commit/211a4f4673361cf25f161df52980494b0d7dada8
+bol-van/zapret,https://github.com/bol-van/zapret,fd81053,bol-van,2025-09-23T08:52:46Z,nfqws: --dpi-desync-fake-tls=!+offset,https://github.com/bol-van/zapret/commit/fd81053d79a83fe78579e64f2672c201be4d133c
+bol-van/zapret,https://github.com/bol-van/zapret,1bb9f26,bol-van,2025-09-23T07:52:38Z,-2b tls fakes,https://github.com/bol-van/zapret/commit/1bb9f260ddee2469eac74e1d6a43af5d4b65ed9f
+bol-van/zapret,https://github.com/bol-van/zapret,26f3cbd,bol-van,2025-09-23T07:52:16Z,update docs,https://github.com/bol-van/zapret/commit/26f3cbd06fa3c4602b9242882b0f7f2dc1f9f169
+bol-van/zapret,https://github.com/bol-van/zapret,e384f88,bol-van,2025-09-23T07:50:51Z,nfqws: --dpi-desync-fake-tcp-mod=seq,https://github.com/bol-van/zapret/commit/e384f889315e8301bce48ae31d6add0546827881
+bol-van/zapret,https://github.com/bol-van/zapret,59bce00,bol-van,2025-09-22T14:39:00Z,update docs,https://github.com/bol-van/zapret/commit/59bce0036b6b169ed00d709bd1f39042518546a8
+bol-van/zapret,https://github.com/bol-van/zapret,0a48c92,bol-van,2025-09-22T14:37:58Z,update docs,https://github.com/bol-van/zapret/commit/0a48c923b8ef00675f1f5787dd0d5146ba3bfec3
+bol-van/zapret,https://github.com/bol-van/zapret,ed47828,bol-van,2025-09-22T14:37:21Z,update docs,https://github.com/bol-van/zapret/commit/ed4782887f8de7da8c003a98484222a08ee882c1
+bol-van/zapret,https://github.com/bol-van/zapret,80b6b75,bol-van,2025-09-22T14:18:23Z,blockcheck: test hostfakesplit altorder,https://github.com/bol-van/zapret/commit/80b6b75934a98944cf53d43f843d81d8e18c68c0
+bol-van/zapret,https://github.com/bol-van/zapret,245ce41,bol-van,2025-09-22T14:06:30Z,nfqws: altorder mod for hostfakesplit,https://github.com/bol-van/zapret/commit/245ce415501c2e84440a7e54bdd909b478926137
+bol-van/zapret,https://github.com/bol-van/zapret,db5dca2,bol-van,2025-09-22T12:06:52Z,nfqws: fix clang warnings,https://github.com/bol-van/zapret/commit/db5dca28b0e1003f95e1c26a56f41c6733dc64d8
+bol-van/zapret,https://github.com/bol-van/zapret,6dad239,bol-van,2025-09-22T11:58:51Z,blockcheck: fix infinite recursion on mac/bsd,https://github.com/bol-van/zapret/commit/6dad239fe389f48c3c382cb91da7f04e9a4f97ba
+bol-van/zapret,https://github.com/bol-van/zapret,aa4982a,bol-van,2025-09-22T11:48:55Z,blockcheck: working strategies intersection print for multiple domains,https://github.com/bol-van/zapret/commit/aa4982a5268ef430aad8cc73e82d0f5a92fbefe4
+bol-van/zapret,https://github.com/bol-van/zapret,61808b3,bol-van,2025-09-22T10:05:35Z,base.sh quote parameters in replace_char,https://github.com/bol-van/zapret/commit/61808b37d815c1a051c59b0dbb3fead1c5696bab
+bol-van/zapret,https://github.com/bol-van/zapret,4b90ee9,bol-van,2025-09-22T07:10:12Z,update docs,https://github.com/bol-van/zapret/commit/4b90ee920ccc5cc4ff581c90720a19e2b3bed9b3
+bol-van/zapret,https://github.com/bol-van/zapret,170e9d7,bol-van,2025-09-22T06:51:25Z,nfqws: --dpi-desync-hostfakesplit-mod,https://github.com/bol-van/zapret/commit/170e9d7ffdc59289307ae7da010bd97805f78f70
+bol-van/zapret,https://github.com/bol-van/zapret,d8f9ba2,bol-van,2025-09-21T16:44:31Z,update docs,https://github.com/bol-van/zapret/commit/d8f9ba29c3885657858c8d6e264e00eac8b41e6d
+bol-van/zapret,https://github.com/bol-van/zapret,4914b81,bol-van,2025-09-21T16:42:38Z,update docs,https://github.com/bol-van/zapret/commit/4914b813e7ffc4b567a57a77e3ef78bedfa574b3
+bol-van/zapret,https://github.com/bol-van/zapret,c3fdec9,bol-van,2025-09-21T15:54:38Z,update docs,https://github.com/bol-van/zapret/commit/c3fdec9bf013ee1e1fced9e9891fc58cfe19439f
+bol-van/zapret,https://github.com/bol-van/zapret,1cbdf9b,bol-van,2025-09-21T15:36:49Z,nfqws: hostfakesplit fix use-after-free,https://github.com/bol-van/zapret/commit/1cbdf9b891e8509e1256b26f85d3da96a345d392
+bol-van/zapret,https://github.com/bol-van/zapret,706dd7b,bol-van,2025-09-21T15:31:09Z,nfqws: hostfakesplit send second fake,https://github.com/bol-van/zapret/commit/706dd7b2d97c0327aa3450a090331c9b855c2d3e
+bol-van/zapret,https://github.com/bol-van/zapret,b2468a9,bol-van,2025-09-21T14:53:50Z,blockcheck: change nft postnat hook from output to postrouting to fix some issues,https://github.com/bol-van/zapret/commit/b2468a90953a278e191e235fec0c2da807198292
+bol-van/zapret,https://github.com/bol-van/zapret,acfbbc5,bol-van,2025-09-21T11:53:58Z,blockcheck: new strategies,https://github.com/bol-van/zapret/commit/acfbbc58ac7430a706804b83108b8e7f81f7012f
+bol-van/zapret,https://github.com/bol-van/zapret,fd506df,bol-van,2025-09-21T10:17:52Z,nfqws: print sessionID lengths if dupsid cannot be applied,https://github.com/bol-van/zapret/commit/fd506dfe086a9595a6824485bae37f65a1b71328
+bol-van/zapret,https://github.com/bol-van/zapret,1ee25e0,bol-van,2025-09-21T09:51:06Z,nfqws: generate random host with a-z at the first position,https://github.com/bol-van/zapret/commit/1ee25e01ea6de234cfda627a5b60e0945ec0d49d
+bol-van/zapret,https://github.com/bol-van/zapret,521c385,bol-van,2025-09-21T09:31:31Z,nfqws: --dpi-desync=hostfakesplit,https://github.com/bol-van/zapret/commit/521c385adb57ca56478720bfaea12e5e2dedefe8
+bol-van/zapret,https://github.com/bol-van/zapret,17971e8,bol-van,2025-09-20T12:25:37Z,update docs,https://github.com/bol-van/zapret/commit/17971e87b4ad61bb3562eaad4d2b7f455088cc21
+bol-van/zapret,https://github.com/bol-van/zapret,4dc1d03,bol-van,2025-09-20T12:24:32Z,update docs,https://github.com/bol-van/zapret/commit/4dc1d035d83676260238af95faf615b2fc57e022
+bol-van/zapret,https://github.com/bol-van/zapret,07eee8a,bol-van,2025-09-20T10:58:01Z,winws: --wf-raw-part,https://github.com/bol-van/zapret/commit/07eee8af255ef8558029a36d9e078890868f8226
+bol-van/zapret,https://github.com/bol-van/zapret,06e7818,bol-van,2025-09-04T07:12:09Z,quick_start: traditional linux separate link,https://github.com/bol-van/zapret/commit/06e7818240a861809a1981155981fef3f0fc4737
+bol-van/zapret,https://github.com/bol-van/zapret,00b0f3c,bol-van,2025-09-04T07:09:48Z,quick_start: typo,https://github.com/bol-van/zapret/commit/00b0f3c94095f3bc74b81e17485205400fb495f1
+bol-van/zapret,https://github.com/bol-van/zapret,17df2ad,bol-van,2025-09-04T07:09:01Z,quick_start: curl/wget to stdout info,https://github.com/bol-van/zapret/commit/17df2adbe083c1188bb9e0f22cccc843e1f11a86
+bol-van/zapret,https://github.com/bol-van/zapret,4034274,bol-van,2025-09-04T07:06:42Z,quick_start: curl/wget to stdout info,https://github.com/bol-van/zapret/commit/40342745f7a2b4d4b135c857fd305d317f1f8a32
+bol-van/zapret,https://github.com/bol-van/zapret,54d4cdb,bol-van,2025-09-03T14:19:35Z,50-dht4all fix space/tabs,https://github.com/bol-van/zapret/commit/54d4cdb2d58227cd78f52ad042c3812514c926be
+bol-van/zapret,https://github.com/bol-van/zapret,b251ea8,bol-van,2025-09-03T09:24:00Z,custom scripts increase repeats,https://github.com/bol-van/zapret/commit/b251ea839cc8f04c45090314ef69fce69f2c00f2
+bol-van/zapret,https://github.com/bol-van/zapret,595cf86,bol-van,2025-09-01T19:00:55Z,put old kernel ver note for @ih to customs,https://github.com/bol-van/zapret/commit/595cf863fc8475b83e5003c952cf212d3cadd783
+bol-van/zapret,https://github.com/bol-van/zapret,91d5b90,bol-van,2025-09-01T18:29:00Z,install_easy: install iptables-mod-u32,https://github.com/bol-van/zapret/commit/91d5b90ded9b3060a4815aaa2329a2bf5001b555
+bol-van/zapret,https://github.com/bol-van/zapret,33a7132,bol-van,2025-09-01T18:25:30Z,50-dht4all move from @th to @ih,https://github.com/bol-van/zapret/commit/33a713292008b792547f23a98ddec28531685226
+bol-van/zapret,https://github.com/bol-van/zapret,d9b23f1,bol-van,2025-08-22T16:13:41Z,docs works,https://github.com/bol-van/zapret/commit/d9b23f14a2a1653d59d835096aec5e15a55776c1
+bol-van/zapret,https://github.com/bol-van/zapret,06613b4,bol-van,2025-08-22T16:10:56Z,docs: windows server note,https://github.com/bol-van/zapret/commit/06613b4fd5e63959f4b5c97afe334ec3e6164bf4
+bol-van/zapret,https://github.com/bol-van/zapret,7364bab,bol-van,2025-08-22T15:58:29Z,docs works,https://github.com/bol-van/zapret/commit/7364bab8a78426c84b995e36cd08d542ef6f73a8
+bol-van/zapret,https://github.com/bol-van/zapret,1f48453,bol-van,2025-08-22T15:56:28Z,docs works,https://github.com/bol-van/zapret/commit/1f48453989f40789b6356ac16006ae079bc646ff
+bol-van/zapret,https://github.com/bol-van/zapret,dc5efeb,bol-van,2025-08-22T15:55:06Z,docs works,https://github.com/bol-van/zapret/commit/dc5efebee295c2fb392c73b5e79b61cc69aed8b6
+bol-van/zapret,https://github.com/bol-van/zapret,10c9499,bol-van,2025-08-22T15:51:31Z,update changes,https://github.com/bol-van/zapret/commit/10c949964799c79d86209964c223d1eb313dc0af
+bol-van/zapret,https://github.com/bol-van/zapret,a50082d,bol-van,2025-08-22T15:49:09Z,readme: hardware details,https://github.com/bol-van/zapret/commit/a50082df922878e4668a19f61b92a12b2a295d97
+bol-van/zapret,https://github.com/bol-van/zapret,0c33bbf,bol-van,2025-08-22T15:38:01Z,readme.en: 6.17 kernel iptables notice,https://github.com/bol-van/zapret/commit/0c33bbfb377ac757e555d181156d3b43d6082923
+bol-van/zapret,https://github.com/bol-van/zapret,ea1be41,bol-van,2025-08-22T15:37:03Z,readme.en: 6.17 kernel iptables notice,https://github.com/bol-van/zapret/commit/ea1be413a642a607b964041a94bb2af7f38487ba
+bol-van/zapret,https://github.com/bol-van/zapret,850d402,bol-van,2025-08-22T15:33:08Z,readme: 6.17 kernel iptables notice,https://github.com/bol-van/zapret/commit/850d4023fbd34101719a23a5b9044be06afce4d1
+bol-van/zapret,https://github.com/bol-van/zapret,4872b8e,bol-van,2025-08-21T14:05:48Z,doc fix,https://github.com/bol-van/zapret/commit/4872b8e4e8c32357e8f405f39600fc4092d39521
+bol-van/zapret,https://github.com/bol-van/zapret,75eaefa,bol-van,2025-08-21T14:05:08Z,Merge pull request #1686 from ekungurov/update-readme  doc fix,https://github.com/bol-van/zapret/commit/75eaefa950b99a97aa8788af5c733d521ad546ea
+bol-van/zapret,https://github.com/bol-van/zapret,582ade3,bol-van,2025-08-21T14:00:08Z,doc fix,https://github.com/bol-van/zapret/commit/582ade3190bce71cd083b602f8ae5c8fa4e19087
+bol-van/zapret,https://github.com/bol-van/zapret,efd369b,Yevgeny Kungurov,2025-08-19T14:51:35Z,doc fix,https://github.com/bol-van/zapret/commit/efd369bb0e8e7f1e7ad87de5e2af6bb23abb9705
+bol-van/zapret,https://github.com/bol-van/zapret,784465b,bol-van,2025-08-13T07:00:07Z,add windivert lang desc link,https://github.com/bol-van/zapret/commit/784465bdcf0ff44a492b770c2c36131fd43f411b
+bol-van/zapret,https://github.com/bol-van/zapret,40a80cd,bol-van,2025-08-12T09:41:49Z,update changes,https://github.com/bol-van/zapret/commit/40a80cd3283151591ad46a95b4d2788351836745
+bol-van/zapret,https://github.com/bol-van/zapret,73f21b0,bol-van,2025-08-12T09:38:42Z,discord only ipv4,https://github.com/bol-van/zapret/commit/73f21b0524b76e6689fe3191a3790958a8096df8
+bol-van/zapret,https://github.com/bol-van/zapret,3469847,bol-van,2025-08-12T08:29:27Z,minor improve stun windivert filter,https://github.com/bol-van/zapret/commit/34698479d0bb439ce715619af0437b47e7df6eab
+bol-van/zapret,https://github.com/bol-van/zapret,0830633,bol-van,2025-08-12T08:00:27Z,windivert: --filter-l7 in readme.txt,https://github.com/bol-van/zapret/commit/0830633f421b9097a7c40f86e0d9fef219ba3b3c
+bol-van/zapret,https://github.com/bol-van/zapret,fc837e1,bol-van,2025-08-12T07:53:45Z,windivert filter examples,https://github.com/bol-van/zapret/commit/fc837e14fa8fa6f79f2a176326be1231bded2cd5
+bol-van/zapret,https://github.com/bol-van/zapret,0e28826,bol-van,2025-08-12T06:57:08Z,wg4all note,https://github.com/bol-van/zapret/commit/0e288262b5cfcebb20780740d20764e218fc249a
+bol-van/zapret,https://github.com/bol-van/zapret,dce049d,bol-van,2025-08-12T06:41:55Z,discord custom,https://github.com/bol-van/zapret/commit/dce049d6b8cded7d26a7cfb26828e56bd6f04416
+bol-van/zapret,https://github.com/bol-van/zapret,d103602,bol-van,2025-08-12T06:41:44Z,stun4all fix length check,https://github.com/bol-van/zapret/commit/d103602d86837c5c2b293248fd18f98176f944b2
+bol-van/zapret,https://github.com/bol-van/zapret,aaf8f18,bol-van,2025-08-12T05:48:33Z,optimize 50-stun4all,https://github.com/bol-van/zapret/commit/aaf8f18a7d60cbae5b3c70a3af46e812f5558970
+bol-van/zapret,https://github.com/bol-van/zapret,de19cc3,bol-van,2025-08-11T17:44:27Z,replace spaces with tab,https://github.com/bol-van/zapret/commit/de19cc3cd4df6d232d0eb9ffbcdd681dc0d8d6b1
+bol-van/zapret,https://github.com/bol-van/zapret,1e56703,bol-van,2025-08-11T17:43:07Z,replace spaces with tab,https://github.com/bol-van/zapret/commit/1e56703d4b3816f1e805fcab6ac8fb61c441a2ad
+bol-van/zapret,https://github.com/bol-van/zapret,cd0f1c4,bol-van,2025-08-11T17:27:39Z,"stun4all, wg4all improve",https://github.com/bol-van/zapret/commit/cd0f1c4bdfa6e3326d7844031f17adb28bacb78b
+bol-van/zapret,https://github.com/bol-van/zapret,135b152,bol-van,2025-08-11T17:23:38Z,"stun4all, wg4all improve",https://github.com/bol-van/zapret/commit/135b152497da4a3c0799786f65b74eace661ff38
+bol-van/zapret,https://github.com/bol-van/zapret,56456c1,bol-van,2025-08-08T08:35:13Z,"nfqws,tpws: fix possible crashes or high memory usage if hostlist has duplicate hostnames",https://github.com/bol-van/zapret/commit/56456c1e0c829170da881747d356fbb818ed223f
+bol-van/zapret,https://github.com/bol-van/zapret,d6a8d1d,bol-van,2025-08-06T05:25:23Z,lame issue warning in english,https://github.com/bol-van/zapret/commit/d6a8d1dc33bd21366dff1567c8a3cac006691b07
+bol-van/zapret,https://github.com/bol-van/zapret,04b3b6a,bol-van,2025-08-04T07:59:41Z,update issue warning,https://github.com/bol-van/zapret/commit/04b3b6abcbcfd87c1efd9fbd3c4b3a79375ad096
+bol-van/zapret,https://github.com/bol-van/zapret,fd58ecf,bol-van,2025-08-04T07:58:41Z,update issue warning,https://github.com/bol-van/zapret/commit/fd58ecf8a56fd756e1e47b9a73fada3780941275
+bol-van/zapret,https://github.com/bol-van/zapret,a560e25,bol-van,2025-08-01T10:28:19Z,update changes.txt,https://github.com/bol-van/zapret/commit/a560e251a134c8edb72fc8e1264a0c5c278d0d62
+bol-van/zapret,https://github.com/bol-van/zapret,2ff0f9c,bol-van,2025-08-01T10:23:05Z,tpws: minor update,https://github.com/bol-van/zapret/commit/2ff0f9c0fffd68c05ef48f7428c4b01290271c48
+bol-van/zapret,https://github.com/bol-van/zapret,4dbd673,bol-van,2025-08-01T09:52:06Z,update changes.txt,https://github.com/bol-van/zapret/commit/4dbd673eaa6ac7d7160ef7b164c2d5bcd6bc78a8
+bol-van/zapret,https://github.com/bol-van/zapret,497810a,bol-van,2025-08-01T09:48:16Z,tpws: special case for ip looking hostnames,https://github.com/bol-van/zapret/commit/497810ab4e439b8cf547991311a22621130be7d2
+bol-van/zapret,https://github.com/bol-van/zapret,4cfed1d,bol-van,2025-08-01T09:12:24Z,nfqws: print hostname_is_ip in ipv6 ipcache,https://github.com/bol-van/zapret/commit/4cfed1db7e53d8827348a8f688e388f0af3de930
+bol-van/zapret,https://github.com/bol-van/zapret,fd6b7a2,bol-van,2025-08-01T09:03:53Z,nfqws: optimize code,https://github.com/bol-van/zapret/commit/fd6b7a2b7fa2aa8322692b7239b26bbd15d7942c
+bol-van/zapret,https://github.com/bol-van/zapret,6d865ad,bol-van,2025-08-01T08:31:48Z,nfqws: comment,https://github.com/bol-van/zapret/commit/6d865ad790692811cfa25478ec3a68da05b0a814
+bol-van/zapret,https://github.com/bol-van/zapret,dfe36ae,bol-van,2025-08-01T08:21:23Z,nfqws: special case for ip looking hostnames,https://github.com/bol-van/zapret/commit/dfe36aee4c056b8e9d48da877d8b95beac18079e
+bol-van/zapret,https://github.com/bol-van/zapret,2d704a8,bol-van,2025-07-31T10:57:13Z,blockcheck: display timestamp enable message,https://github.com/bol-van/zapret/commit/2d704a859dd2d562f9739bb34ba7b49cf90673e1
+bol-van/zapret,https://github.com/bol-van/zapret,8026d11,bol-van,2025-07-31T10:49:30Z,"blockcheck: test ts fooling, silently enable timestamps in windows",https://github.com/bol-van/zapret/commit/8026d11f719a8fdb68854743f293ecdcf95e3a24
+bol-van/zapret,https://github.com/bol-van/zapret,2f77cec,bol-van,2025-07-31T10:11:18Z,doc works,https://github.com/bol-van/zapret/commit/2f77cec863cfad2f1e0d05fb11aed1a459dd6dd1
+bol-van/zapret,https://github.com/bol-van/zapret,ba7954f,bol-van,2025-07-31T10:09:44Z,doc works,https://github.com/bol-van/zapret/commit/ba7954f068bb368e29f109b6ffee4701f627d3e3
+bol-van/zapret,https://github.com/bol-van/zapret,8b5c951,bol-van,2025-07-31T09:50:57Z,nfqws: ts fooling,https://github.com/bol-van/zapret/commit/8b5c95145155551adf8508e2921d7a967866b5cc
+bol-van/zapret,https://github.com/bol-van/zapret,84e75b0,bol-van,2025-07-30T12:08:09Z,doc works,https://github.com/bol-van/zapret/commit/84e75b0f28f94f9ec3ed4cdc5b5910b334a36b73
+bol-van/zapret,https://github.com/bol-van/zapret,c4e5db3,bol-van,2025-07-30T12:06:24Z,doc works,https://github.com/bol-van/zapret/commit/c4e5db309f8fb2b329e09c92fe5454bf78cdfaed
+bol-van/zapret,https://github.com/bol-van/zapret,769f7b6,bol-van,2025-07-30T12:02:08Z,doc works,https://github.com/bol-van/zapret/commit/769f7b60c82518756d8af1ca8da3a8ecbdfe1a27
+bol-van/zapret,https://github.com/bol-van/zapret,b0578c5,bol-van,2025-07-30T12:00:41Z,doc works,https://github.com/bol-van/zapret/commit/b0578c5e9f15d9bc269bdf525f814f3720323af1
+bol-van/zapret,https://github.com/bol-van/zapret,40362bf,bol-van,2025-07-30T12:00:05Z,doc works,https://github.com/bol-van/zapret/commit/40362bfb5bea0e90066f3811acf44fe75f4a391e
+bol-van/zapret,https://github.com/bol-van/zapret,10eb905,bol-van,2025-07-30T11:59:28Z,doc works,https://github.com/bol-van/zapret/commit/10eb9050a10d6f30b2fd22d76cb92bcc455055a8
+bol-van/zapret,https://github.com/bol-van/zapret,b63e598,bol-van,2025-07-30T11:42:30Z,FILTER_MARK support,https://github.com/bol-van/zapret/commit/b63e598085ed19d7e164d8212cb8b6f1f6db8530
+bol-van/zapret,https://github.com/bol-van/zapret,c60f9c9,bol-van,2025-07-08T07:01:58Z,doc update ver,https://github.com/bol-van/zapret/commit/c60f9c9027a6db533c84f90ebbad40c058b424e7
+bol-van/zapret,https://github.com/bol-van/zapret,951c980,bol-van,2025-07-07T14:33:36Z,typo,https://github.com/bol-van/zapret/commit/951c980bec107882fdcbbf62c22b57dfa2b8dcc8
+bol-van/zapret,https://github.com/bol-van/zapret,5eaec08,bol-van,2025-07-07T12:53:46Z,install_easy: warn about --ipset,https://github.com/bol-van/zapret/commit/5eaec085ddfc20bb921937c3a6f54a379dde477a
+bol-van/zapret,https://github.com/bol-van/zapret,721b353,bol-van,2025-07-07T12:38:51Z,doc works,https://github.com/bol-van/zapret/commit/721b35377607d9e342bff660ecce1234cfd45e5c
+bol-van/zapret,https://github.com/bol-van/zapret,e6d2051,bol-van,2025-07-07T12:37:40Z,doc works,https://github.com/bol-van/zapret/commit/e6d2051c87149beb104b4d8d18b1405d9dca65c5
+bol-van/zapret,https://github.com/bol-van/zapret,e665794,bol-van,2025-07-07T12:33:41Z,doc works,https://github.com/bol-van/zapret/commit/e665794ac4036df9e802d2865db8b6c32c1d8090
+bol-van/zapret,https://github.com/bol-van/zapret,7db14a0,bol-van,2025-07-07T12:33:02Z,tpws: openbsd no more inits /dev/pf by default,https://github.com/bol-van/zapret/commit/7db14a07c5fb1bfd83c1299830ea033c0925019e
+bol-van/zapret,https://github.com/bol-van/zapret,c14554c,bol-van,2025-06-30T04:46:10Z,Merge pull request #1585 from artur-intech/patch-1  Fix filename,https://github.com/bol-van/zapret/commit/c14554c1f3b71b41d017a3d8c6306a059f658e18
+bol-van/zapret,https://github.com/bol-van/zapret,ced1682,Artur,2025-06-29T18:45:50Z,Fix filename,https://github.com/bol-van/zapret/commit/ced1682003055f8d0c3141a153ce080efaf53ace
+bol-van/zapret,https://github.com/bol-van/zapret,4701f27,Artur,2025-06-29T17:18:37Z,"Fix filename  It is `zapret-hosts-user.txt`, not `*-users*`.",https://github.com/bol-van/zapret/commit/4701f27372158ff4ec36c1dbd83ab944ad901a3f
+bol-van/zapret,https://github.com/bol-van/zapret,a169906,bol-van,2025-06-27T18:57:08Z,Merge pull request #1575 from dass79zh/ipv6less-curl-fix  Support curl compiled without IPv6 support.,https://github.com/bol-van/zapret/commit/a1699067b374f1dd7344fd15c2a6f41aff904a89
+bol-van/zapret,https://github.com/bol-van/zapret,643fc0c,Andrew Danshin,2025-06-27T18:07:32Z,Support curl compiled without IPv6 support.  	modified:   blockcheck.sh,https://github.com/bol-van/zapret/commit/643fc0c45601bfbf8967fd064c8d311e15558248
+bol-van/zapret,https://github.com/bol-van/zapret,09c07f6,bol-van,2025-06-23T05:17:52Z,winws: decrease wf-save buf,https://github.com/bol-van/zapret/commit/09c07f6d21d757d8569e5e9218a1ea8b9c774e91
+bol-van/zapret,https://github.com/bol-van/zapret,dd72c68,bol-van,2025-06-23T05:14:36Z,winws: increase windivert filter buffers,https://github.com/bol-van/zapret/commit/dd72c68ae6e0f9c9b5068b344fd8ebac6bc1fd55
+bol-van/zapret,https://github.com/bol-van/zapret,9c1a3e7,bol-van,2025-06-22T18:39:27Z,Makefiles: CC=cc,https://github.com/bol-van/zapret/commit/9c1a3e77ccbd59345ce948b723a7ef18313b5ef4
+bol-van/zapret,https://github.com/bol-van/zapret,ae957e9,bol-van,2025-06-22T16:27:20Z,doc fix,https://github.com/bol-van/zapret/commit/ae957e9a73566d39c73fba229ae668fd46b17025
+bol-van/zapret,https://github.com/bol-van/zapret,bc47a13,bol-van,2025-06-16T06:13:40Z,install_bin: no help text if getarch,https://github.com/bol-van/zapret/commit/bc47a13ba442afed21e817a559806fc46dfc005d
+bol-van/zapret,https://github.com/bol-van/zapret,20b69cb,bol-van,2025-06-16T04:15:08Z,install_bin: minor improve help text,https://github.com/bol-van/zapret/commit/20b69cb63d3fb3602c5a2b387c517350051471d7
+bol-van/zapret,https://github.com/bol-van/zapret,ef4f8a2,bol-van,2025-06-16T04:10:59Z,install_bin: display help text if no bins found,https://github.com/bol-van/zapret/commit/ef4f8a2b86c6c2d6ddb6d13813de342c633f5d9a
+bol-van/zapret,https://github.com/bol-van/zapret,d00d341,bol-van,2025-06-15T13:22:38Z,blockcheck: display kernel ver,https://github.com/bol-van/zapret/commit/d00d341505629fcd5ffe6608cf5315fc6aa76ec9
+bol-van/zapret,https://github.com/bol-van/zapret,0738d39,bol-van,2025-06-15T12:56:25Z,blockcheck: curl version display,https://github.com/bol-van/zapret/commit/0738d3980f7a09cf33d6c56e3305aa9cfcc1eedf
