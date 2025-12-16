@@ -22,8 +22,9 @@
 
 ### 使用教程
 
-- 可以修改 main.py 中的参数，调整项目筛选的 star 和 commit 的数量
-- 运行 main.py 后，可在 results 文件夹中获取爬取的 csv 文件，包括每个项目的数据以及合并之后的数据
+- 运行 diffChecker 以获取不同项目的commit及其diff行数，结果保存在 output_with_time
+- 运行 findSection 以检测是否存在满足条件的区间，结果保存在 project_intervals_results.csv
+- 这里由于使用并行化爬虫，因此第一步结果中保留了 commit 提交时间以保证按提交时间进行排序
 
 # 项目常见Bug类型分类表
 
@@ -46,5 +47,7 @@
 | | 非Bug修复 | Non-Bug Fix | `refactor`, `cleanup`, `style`, `doc` |
 
 ## 使用说明
+
+本功能还未上线
 
 此表格用于GPT API分析C语言项目commit消息中的bug类型。每个commit消息将被分类到上述类型之一，如果没有修复bug则标记为"非Bug修复"。
