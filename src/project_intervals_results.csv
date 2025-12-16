@@ -1,0 +1,8 @@
+﻿project,start_commit_id,end_commit_id,interval_length
+php/php-src,114260b,d40ae97,129
+mpv-player/mpv,b290781,7ee677c,108
+torvalds/linux,12b5cd9,27f204c,86
+Genymobile/scrcpy,fb47b87,5df218d,84
+tmux/tmux,4bdfbfa,e6d275b,65
+jqlang/jq,2ee20ca,9e2695e,56
+FFmpeg/FFmpeg,3da2a21,5e56937,56
