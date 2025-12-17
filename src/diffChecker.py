@@ -1,4 +1,5 @@
 # src/github_analyzer_fast.py
+import pandas as pd
 import requests
 import time
 import json
@@ -287,14 +288,55 @@ class CommitAnalyzerFast:
         """获取输出文件的完整路径"""
         return os.path.join(self.output_dir, filename)
 
+    def _project_file_exists(self, project: Dict) -> bool:
+        """检查项目是否已经存在数据文件"""
+        safe_name = project["full_name"].replace("/", "_").replace("\\", "_")
+        possible_filenames = [
+            f"{safe_name}_commits_with_time.csv",
+            f"{safe_name}_commits_with_diff.csv",
+            f"{safe_name}_commits.csv",
+            f"{safe_name}_commits_fast.csv",
+            f"{safe_name}_commits_minimal.csv"
+        ]
+
+        for filename in possible_filenames:
+            filepath = self._get_output_path(filename)
+            if os.path.exists(filepath):
+                # 检查文件是否为空
+                if os.path.getsize(filepath) > 100:  # 文件大小大于100字节
+                    logger.info(f"📁 项目 {project['full_name']} 已有数据文件: {filename}")
+                    return True
+        return False
+
+    def _get_existing_commits_count(self, project: Dict) -> int:
+        """获取已存在数据文件中的commit数量"""
+        safe_name = project["full_name"].replace("/", "_").replace("\\", "_")
+        possible_filenames = [
+            f"{safe_name}_commits_with_time.csv",
+            f"{safe_name}_commits_with_diff.csv",
+            f"{safe_name}_commits.csv"
+        ]
+
+        for filename in possible_filenames:
+            filepath = self._get_output_path(filename)
+            if os.path.exists(filepath) and os.path.getsize(filepath) > 100:
+                try:
+                    df = pd.read_csv(filepath)
+                    return len(df)
+                except:
+                    continue
+        return 0
+
     def run(self):
-        """运行分析，确保时间顺序正确"""
+        """运行分析，确保时间顺序正确，跳过已存在的项目"""
         print("=" * 60)
-        print("GitHub C项目提交分析工具（带时间排序）")
+        print("GitHub C项目提交分析工具（带时间排序）- 增量爬取")
         print("=" * 60)
         print(f"输出目录: {os.path.abspath(self.output_dir)}")
+        print(f"目标项目数: {self.config.max_projects}")
         print(f"每个项目获取commits: {self.config.commits_per_project}")
         print(f"并行工作线程: {self.github.max_workers}")
+        print(f"✓ 自动跳过已存在的项目")
         print()
 
         # 1. 搜索项目
@@ -308,13 +350,38 @@ class CommitAnalyzerFast:
             logger.error("未找到符合条件的项目")
             return
 
-        # 2. 获取每个项目的commits（带时间和diff行数）
+        # 2. 过滤已存在的项目
+        projects_to_process = []
+        existing_projects = []
+
+        for project in self.projects:
+            if self._project_file_exists(project):
+                existing_projects.append(project)
+            else:
+                projects_to_process.append(project)
+
+        print(f"\n📊 项目统计:")
+        print(f"  找到项目总数: {len(self.projects)}")
+        print(f"  已存在项目数: {len(existing_projects)}")
+        print(f"  待处理项目数: {len(projects_to_process)}")
+
+        if existing_projects:
+            print(f"\n📁 已跳过的项目:")
+            for i, project in enumerate(existing_projects[:10], 1):  # 只显示前10个
+                commit_count = self._get_existing_commits_count(project)
+                print(f"  {i:2d}. {project['full_name']} ({commit_count} commits)")
+            if len(existing_projects) > 10:
+                print(f"  ... 还有 {len(existing_projects) - 10} 个项目")
+
+        # 3. 获取每个项目的commits（带时间和diff行数）
         total_expected_commits = 0
         total_actual_commits = 0
+        processed_count = 0
 
-        for i, project in enumerate(self.projects, 1):
+        for i, project in enumerate(projects_to_process, 1):
+            processed_count += 1
             project_individual_start = time.time()
-            print(f"\n[{i}/{len(self.projects)}] 分析项目: {project['full_name']}")
+            print(f"\n[{i}/{len(projects_to_process)}] 分析项目: {project['full_name']}")
 
             # 获取commits（带时间和diff行数，已排序）
             commits = self.github.get_commits_with_time_and_diff(
@@ -350,9 +417,15 @@ class CommitAnalyzerFast:
                 # 保存每个项目的数据
                 self.save_project_commits_with_time_csv(project, commits)
 
-        # 3. 显示最终统计
+                # 每处理5个项目显示一次总进度
+                if processed_count % 5 == 0:
+                    elapsed = time.time() - start_time
+                    print(f"\n📈 进度: 已处理 {processed_count}/{len(projects_to_process)} 个项目")
+                    print(f"📈 用时: {elapsed:.1f} 秒")
+
+        # 4. 显示最终统计
         total_time = time.time() - start_time
-        self.print_summary(total_expected_commits, total_actual_commits, total_time)
+        self.print_summary(len(projects_to_process), total_expected_commits, total_actual_commits, total_time)
 
     def save_project_commits_with_time_csv(self, project: Dict, commits: List[Dict], filename: str = None):
         """保存单个项目的commits到CSV，包含时间"""
@@ -395,14 +468,14 @@ class CommitAnalyzerFast:
 
         return filepath
 
-    def print_summary(self, total_expected: int, total_actual: int, total_time: float):
+    def print_summary(self, processed_count, total_expected: int, total_actual: int, total_time: float):
         """打印摘要信息"""
         print("\n" + "=" * 60)
         print("分析摘要（带时间排序）")
         print("=" * 60)
         print(f"✅ 分析完成！")
         print(f"  总用时: {total_time:.1f} 秒 ({total_time / 60:.1f} 分钟)")
-        print(f"  项目数量: {len(self.projects)}")
+        print(f"  处理项目数: {processed_count}")
         print(f"  Commit总数: {total_actual}/{total_expected}")
 
         if total_actual > 0:
@@ -414,13 +487,25 @@ class CommitAnalyzerFast:
         print(f"\n📁 生成的文件 (包含4个字段):")
         print(f"  项目名称, 提交ID, 提交时间, 总变化行数")
 
+        # 显示生成的文件列表
+        import glob
+        csv_files = glob.glob(os.path.join(self.output_dir, "*.csv"))
+        if csv_files:
+            print(f"\n📁 目录中的文件 ({len(csv_files)} 个):")
+            for csv_file in csv_files[:10]:  # 只显示前10个
+                filename = os.path.basename(csv_file)
+                size = os.path.getsize(csv_file)
+                print(f"  - {filename} ({size:,} bytes)")
+            if len(csv_files) > 10:
+                print(f"  ... 还有 {len(csv_files) - 10} 个文件")
+
 
 def main_with_time():
-    """主函数（带时间排序）"""
+    """主函数（带时间排序）- 增量爬取"""
     config = ProjectConfig(
         min_stars=1000,
-        max_projects=20,  # 减少项目数提高速度
-        commits_per_project=300,  # 每个项目获取300个commits
+        max_projects=50,  # 目标项目数
+        commits_per_project=500,  # 每个项目获取500个commits
         language="C"
     )
 
