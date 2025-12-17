@@ -3,172 +3,212 @@ import os
 import glob
 
 
-def find_longest_valid_interval(file_path, min_interval_length=50, max_diff_threshold=200):
+def load_intervals_from_file(intervals_file_path):
     """
-    为单个项目文件找到最长的连续区间，其中所有commit的diff行数不超过阈值
-    每个项目只选取一段最长的区间
+    从区间文件中加载区间信息
+    格式：project,start_commit_id,end_commit_id,interval_length
     """
-    # 读取commit数据
-    try:
-        df = pd.read_csv(file_path)
-    except Exception as e:
-        print(f"Error reading {file_path}: {e}")
-        return [], []
+    intervals = []
 
-    # 检查是否有必要的列
+    try:
+        # 首先尝试读取文件，看看是否有表头
+        with open(intervals_file_path, 'r', encoding='utf-8') as f:
+            first_line = f.readline().strip()
+
+        # 检查第一行是否包含表头
+        has_header = 'project' in first_line.lower() or 'interval' in first_line.lower()
+
+        if has_header:
+            print(f"检测到文件有表头，跳过第一行")
+            # 有表头，从第二行开始读取
+            df = pd.read_csv(intervals_file_path)
+        else:
+            # 无表头
+            df = pd.read_csv(intervals_file_path, header=None,
+                             names=['project', 'start_commit_id', 'end_commit_id', 'interval_length'])
+
+        print(f"读取到 {len(df)} 行数据")
+
+        for _, row in df.iterrows():
+            # 跳过表头行
+            if str(row.get('project', '')).lower() in ['project', 'project_name']:
+                continue
+
+            try:
+                interval_info = {
+                    'project': str(row['project']).strip(),
+                    'start_commit_id': str(row['start_commit_id']).strip(),
+                    'end_commit_id': str(row['end_commit_id']).strip(),
+                    'interval_length': int(row['interval_length'])
+                }
+                intervals.append(interval_info)
+            except (ValueError, TypeError) as e:
+                print(f"跳过无效行: {row.to_dict()} - 错误: {e}")
+                continue
+
+        print(f"✓ 从 {intervals_file_path} 成功加载了 {len(intervals)} 个有效区间")
+        return intervals
+
+    except Exception as e:
+        print(f"Error loading intervals from {intervals_file_path}: {e}")
+        return []
+
+
+def get_project_file_path(project_name, data_dir="output_with_time"):
+    """
+    根据项目名找到对应的数据文件路径
+    """
+    # 将项目名转换为可能的文件名格式
+    safe_names = [
+        project_name.replace('/', '_') + '_commits_with_time.csv',
+        project_name.replace('/', '_') + '_commits.csv',
+        project_name.replace('/', '_') + '.csv'
+    ]
+
+    for filename in safe_names:
+        file_path = os.path.join(data_dir, filename)
+        if os.path.exists(file_path):
+            return file_path
+
+    return None
+
+
+def extract_commits_in_order(project_name, start_commit_id, end_commit_id, expected_length,
+                             data_dir="output_with_time"):
+    """
+    从项目数据文件中按顺序提取指定区间的所有commits
+    保持源文件中的原始顺序
+    """
+    # 1. 找到项目数据文件
+    data_file = get_project_file_path(project_name, data_dir)
+    if not data_file:
+        print(f"  ✗ 找不到项目 {project_name} 的数据文件")
+        return []
+
+    # 2. 读取整个项目数据文件
+    try:
+        df = pd.read_csv(data_file)
+    except Exception as e:
+        print(f"  ✗ 读取 {data_file} 失败: {e}")
+        return []
+
+    # 检查必要的列
     required_columns = ['项目名称', '提交ID', '提交时间', '总变化行数']
     missing_columns = [col for col in required_columns if col not in df.columns]
     if missing_columns:
-        print(f"Missing columns in {file_path}: {missing_columns}")
-        return [], []
+        print(f"  ✗ 缺少必要的列: {missing_columns}")
+        return []
 
-    # 确保数据按时间顺序排列（最新的在前面）
-    if '提交时间' in df.columns:
-        # 将提交时间转换为datetime类型用于排序
-        df['提交时间'] = pd.to_datetime(df['提交时间'], errors='coerce')
-        # 按时间倒序排序（最新的在最前面）
-        df = df.sort_values('提交时间', ascending=False).reset_index(drop=True)
+    # 3. 找到起始和终止commit的索引
+    start_index = None
+    end_index = None
 
-    # 从第一行获取项目名称
-    project_name = df.iloc[0]['项目名称'] if len(df) > 0 else 'Unknown'
+    for i, commit_id in enumerate(df['提交ID']):
+        commit_str = str(commit_id).strip()
 
-    # 将总变化行数转换为数值类型
-    df['总变化行数'] = pd.to_numeric(df['总变化行数'], errors='coerce').fillna(0)
+        # 检查是否匹配起始commit
+        if start_index is None and commit_str.startswith(start_commit_id):
+            start_index = i
 
-    # 找到所有满足条件的连续区间
-    candidate_intervals = []  # 候选区间
-    candidate_commits = []  # 候选区间的commits
+        # 检查是否匹配终止commit
+        if end_index is None and commit_str.startswith(end_commit_id):
+            end_index = i
 
-    start_index = -1
-    current_length = 0
-    current_commits = []  # 当前区间的commits
+    # 4. 验证找到的索引
+    if start_index is None:
+        print(f"  ✗ 找不到起始commit: {start_commit_id}")
+        return []
 
-    for i in range(len(df)):
-        current_change = df.iloc[i]['总变化行数']
+    if end_index is None:
+        print(f"  ✗ 找不到终止commit: {end_commit_id}")
+        return []
 
-        if current_change <= max_diff_threshold:
-            if start_index == -1:  # 开始新的区间
-                start_index = i
+    # 5. 确保起始索引小于终止索引
+    if start_index > end_index:
+        print(f"  ⚠️  起始commit索引 {start_index} 在终止commit索引 {end_index} 之后")
+        return []
 
-            current_length += 1
-            # 保存当前commit信息
-            commit_info = {
-                'project': project_name,
-                'commit': df.iloc[i]['提交ID'],
-                'diff_lines': int(current_change)
-            }
-            current_commits.append(commit_info)
-        else:
-            if current_length >= min_interval_length:  # 只记录长度≥50的区间
-                end_index = start_index + current_length - 1
+    # 6. 验证区间长度
+    actual_length = end_index - start_index + 1
+    if actual_length != expected_length:
+        print(f"  ⚠️  实际区间长度 {actual_length} 与预期 {expected_length} 不一致")
+        return []
 
-                # 获取区间起始和终止commit
-                start_commit_id = df.iloc[start_index]['提交ID']
-                end_commit_id = df.iloc[end_index]['提交ID']
+    # 7. 提取区间内的所有commits，保持原始顺序
+    interval_commits = []
 
-                # 保存区间信息
-                interval_info = {
-                    'project': project_name,
-                    'start_commit_id': start_commit_id,
-                    'end_commit_id': end_commit_id,
-                    'interval_length': current_length,
-                    'start_index': start_index,
-                    'end_index': end_index
-                }
-                candidate_intervals.append(interval_info)
-                candidate_commits.append(current_commits.copy())  # 保存副本
-
-            # 重置计数器
-            start_index = -1
-            current_length = 0
-            current_commits = []
-
-    # 处理最后一个区间
-    if current_length >= min_interval_length:
-        end_index = start_index + current_length - 1
-        start_commit_id = df.iloc[start_index]['提交ID']
-        end_commit_id = df.iloc[end_index]['提交ID']
-
-        interval_info = {
+    for i in range(start_index, end_index + 1):
+        row = df.iloc[i]
+        commit_info = {
             'project': project_name,
-            'start_commit_id': start_commit_id,
-            'end_commit_id': end_commit_id,
-            'interval_length': current_length,
-            'start_index': start_index,
-            'end_index': end_index
+            'commit': str(row['提交ID']).strip(),
+            'diff_lines': int(float(row['总变化行数']))
         }
-        candidate_intervals.append(interval_info)
-        candidate_commits.append(current_commits.copy())
+        interval_commits.append(commit_info)
 
-    # 如果没有找到任何区间，返回空
-    if not candidate_intervals:
-        return [], []
+    print(f"  ✓ 提取了 {actual_length} 个commits (从索引 {start_index} 到 {end_index})")
 
-    # 选择最长的区间
-    longest_interval = max(candidate_intervals, key=lambda x: x['interval_length'])
+    # 8. 验证顺序
+    if actual_length >= 2:
+        first_commit = interval_commits[0]['commit']
+        last_commit = interval_commits[-1]['commit']
 
-    # 找到对应的commits
-    longest_index = candidate_intervals.index(longest_interval)
-    selected_commits = candidate_commits[longest_index]
-
-    return [longest_interval], selected_commits
-
-
-def process_all_projects_in_directory(directory_path="output_with_time", min_interval_length=50,
-                                      max_diff_threshold=200):
-    """
-    处理目录中的所有项目文件，每个项目只选取最长的一段区间
-    """
-    # 查找所有CSV文件
-    csv_files = glob.glob(os.path.join(directory_path, "*.csv"))
-
-    if not csv_files:
-        print(f"No CSV files found in {directory_path}")
-        return [], []
-
-    print(f"Found {len(csv_files)} project files to process")
-    print(f"Minimum interval length: {min_interval_length} commits")
-    print(f"Maximum diff per commit: {max_diff_threshold} lines")
-
-    all_intervals = []  # 所有区间信息（每个项目一段）
-    all_commits = []  # 所有选定区间内的commits
-
-    for file_path in csv_files:
-        filename = os.path.basename(file_path)
-        print(f"\nProcessing {filename}...")
-
-        # 检查文件大小
-        file_size = os.path.getsize(file_path)
-        if file_size == 0:
-            print(f"  ✗ File is empty")
-            continue
-
-        # 找到最长的区间
-        intervals, commits = find_longest_valid_interval(file_path, min_interval_length, max_diff_threshold)
-
-        if intervals:
-            # 每个项目只应该有一段区间
-            interval = intervals[0]
-
-            print(f"  ✓ Found longest interval: {interval['interval_length']} commits")
-            print(f"    From: {interval['start_commit_id']} to {interval['end_commit_id']}")
-
-            # 添加找到的区间
-            all_intervals.append(interval)
-
-            # 添加找到的commits
-            all_commits.extend(commits)
+        if first_commit.startswith(start_commit_id) and last_commit.startswith(end_commit_id):
+            print(f"  ✓ 顺序验证通过: {first_commit[:7]}..{last_commit[:7]}")
         else:
-            print(f"  ✗ No interval with ≥{min_interval_length} commits found")
+            print(f"  ⚠️  顺序验证失败")
 
-    return all_intervals, all_commits
+    return interval_commits
 
 
-def save_results(all_intervals, all_commits, output_dir="results"):
+def process_all_intervals(intervals_file_path, data_dir="output_with_time"):
+    """
+    处理所有区间，提取每个区间的commits
+    """
+    # 1. 加载区间信息
+    all_intervals = load_intervals_from_file(intervals_file_path)
+    if not all_intervals:
+        return [], []
+
+    # 2. 为每个区间提取commits
+    all_commits = []
+    processed_intervals = []
+
+    print(f"\n开始处理 {len(all_intervals)} 个区间...")
+    print("-" * 80)
+
+    for i, interval in enumerate(all_intervals, 1):
+        project = interval['project']
+        start_commit = interval['start_commit_id']
+        end_commit = interval['end_commit_id']
+        expected_length = interval['interval_length']
+
+        print(f"\n[{i}/{len(all_intervals)}] 处理: {project}")
+        print(f"  区间: {start_commit}..{end_commit} (预期 {expected_length} commits)")
+
+        # 提取该区间的commits
+        commits = extract_commits_in_order(project, start_commit, end_commit, expected_length, data_dir)
+
+        if commits:
+            actual_length = len(commits)
+
+            # 添加到总列表
+            all_commits.extend(commits)
+            processed_intervals.append(interval)
+
+            # 显示提取的commits数量
+            print(f"  ✓ 成功提取 {actual_length} 个commits")
+        else:
+            print(f"  ✗ 提取失败")
+
+    return processed_intervals, all_commits
+
+
+def save_results(processed_intervals, all_commits, output_dir="results"):
     """
     保存结果到文件
     """
-    if not all_intervals and not all_commits:
+    if not processed_intervals and not all_commits:
         print("No results to save")
         return
 
@@ -176,9 +216,9 @@ def save_results(all_intervals, all_commits, output_dir="results"):
     os.makedirs(output_dir, exist_ok=True)
 
     # 1. 保存区间信息（格式：project,start_commit_id,end_commit_id,interval_length）
-    if all_intervals:
+    if processed_intervals:
         # 创建DataFrame
-        intervals_df = pd.DataFrame(all_intervals)
+        intervals_df = pd.DataFrame(processed_intervals)
 
         # 确保列顺序正确
         intervals_df = intervals_df[['project', 'start_commit_id', 'end_commit_id', 'interval_length']]
@@ -192,7 +232,7 @@ def save_results(all_intervals, all_commits, output_dir="results"):
         print(f"\n✓ 区间信息已保存到: {intervals_file}")
 
         # 打印所有区间
-        print(f"\n所有项目的区间 (共{len(intervals_df)}个):")
+        print(f"\n处理成功的区间 (共{len(intervals_df)}个):")
         print("-" * 80)
         for i, row in intervals_df.iterrows():
             project = row['project']
@@ -209,10 +249,8 @@ def save_results(all_intervals, all_commits, output_dir="results"):
         # 确保列顺序正确
         commits_df = commits_df[['project', 'commit', 'diff_lines']]
 
-        # 按项目和commit排序
-        commits_df = commits_df.sort_values(['project', 'commit'])
-
-        # 保存到CSV
+        # 按项目分组，保持每个项目内的时间顺序
+        # 由于我们已经按原始文件顺序提取，所以直接保存即可
         commits_file = os.path.join(output_dir, "project_commits.csv")
         commits_df.to_csv(commits_file, index=False, header=False, encoding='utf-8-sig')
         print(f"\n✓ 所有commits详情已保存到: {commits_file}")
@@ -222,33 +260,59 @@ def save_results(all_intervals, all_commits, output_dir="results"):
         projects_count = commits_df['project'].nunique()
         print(f"  包含 {projects_count} 个项目的 {commits_count} 个commits")
 
+        # 显示每个项目的commits数量
+        project_stats = commits_df.groupby('project').size().reset_index(name='count')
+        project_stats = project_stats.sort_values('count', ascending=False)
+
+        print(f"\n各项目commits数量:")
+        for i, row in project_stats.head(10).iterrows():
+            project = row['project']
+            if len(project) > 25:
+                project = project[:22] + "..."
+            print(f"  {project:25} {row['count']:4d} commits")
+
+        # 验证文件中的顺序
+        print(f"\n验证文件顺序:")
+        with open(commits_file, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+            if len(lines) >= 3:
+                first_line = lines[0].strip()
+                last_line = lines[-1].strip() if lines[-1].strip() else lines[-2].strip()
+                print(f"  第一个commit: {first_line}")
+                print(f"  最后一个commit: {last_line}")
+
     # 打印汇总信息
     print(f"\n" + "=" * 60)
     print("汇总信息")
     print("=" * 60)
-    print(f"符合条件的项目数: {len(all_intervals)}")
+    print(f"成功处理的区间数: {len(processed_intervals)}")
 
-    if all_intervals:
+    if processed_intervals:
         # 统计信息
-        total_commits = sum(interval['interval_length'] for interval in all_intervals)
-        avg_length = total_commits / len(all_intervals)
-        max_length = max(interval['interval_length'] for interval in all_intervals)
-        min_length = min(interval['interval_length'] for interval in all_intervals)
+        total_commits = sum(interval['interval_length'] for interval in processed_intervals)
+        total_extracted_commits = len(all_commits)
+        avg_length = total_commits / len(processed_intervals) if processed_intervals else 0
+        max_length = max(interval['interval_length'] for interval in processed_intervals) if processed_intervals else 0
+        min_length = min(interval['interval_length'] for interval in processed_intervals) if processed_intervals else 0
 
         # 计算总变化行数
         if all_commits:
             total_diff_lines = sum(commit['diff_lines'] for commit in all_commits)
-            avg_diff = total_diff_lines / total_commits if total_commits > 0 else 0
+            avg_diff = total_diff_lines / total_extracted_commits if total_extracted_commits > 0 else 0
         else:
             total_diff_lines = 0
             avg_diff = 0
 
-        print(f"总commit数: {total_commits}")
+        print(f"预期总commit数: {total_commits}")
+        print(f"实际提取commit数: {total_extracted_commits}")
         print(f"总变化行数: {total_diff_lines}")
         print(f"平均区间长度: {avg_length:.1f} commits")
         print(f"平均每commit变化: {avg_diff:.1f} 行")
         print(f"最小区间长度: {min_length} commits")
         print(f"最大区间长度: {max_length} commits")
+
+        if total_commits != total_extracted_commits:
+            print(f"⚠️  注意: 预期和实际提取的commit数量不一致")
 
     print(f"详细commits记录数: {len(all_commits)}")
 
@@ -258,30 +322,24 @@ def main():
     主函数
     """
     # 配置参数
-    input_dir = "output_with_time"  # 包含各项目commit文件的目录
+    intervals_file = "project_intervals_results.csv"  # 区间文件路径
+    data_dir = "output_with_time"  # 包含各项目commit文件的目录
     output_dir = "results"  # 输出结果目录
-    min_interval_length = 50  # 最小区间长度
-    max_diff_threshold = 200  # 每个commit的最大diff行数阈值
 
     print("=" * 60)
-    print("GitHub项目连续小变更区间分析")
-    print("每个项目只选取最长的一段区间")
+    print("GitHub项目区间commits提取工具")
+    print("从已确定的区间中提取所有commits")
     print("=" * 60)
-    print(f"输入目录: {input_dir}")
+    print(f"区间文件: {intervals_file}")
+    print(f"数据目录: {data_dir}")
     print(f"输出目录: {output_dir}")
-    print(f"最小区间长度: {min_interval_length} commits")
-    print(f"每个commit最大diff行数: {max_diff_threshold} lines")
     print("-" * 60)
 
-    # 处理所有项目文件
-    all_intervals, all_commits = process_all_projects_in_directory(
-        input_dir,
-        min_interval_length,
-        max_diff_threshold
-    )
+    # 处理所有区间
+    processed_intervals, all_commits = process_all_intervals(intervals_file, data_dir)
 
     # 保存结果
-    save_results(all_intervals, all_commits, output_dir)
+    save_results(processed_intervals, all_commits, output_dir)
 
 
 if __name__ == "__main__":
